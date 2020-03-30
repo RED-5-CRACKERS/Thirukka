@@ -1,1 +1,3 @@
 # Thirukka
+## REQUIRED:
+##PYTHON3
