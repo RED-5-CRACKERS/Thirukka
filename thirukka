@@ -1,0 +1,337 @@
+#!/usr/bin/python3
+#===========================================================================================================================(Madhava)
+#===========================================================================================================================(R-5-C)
+import sys
+import time
+import itertools
+def T():
+    time.sleep(0.04)
+T()
+print('\u001b[32;1m')
+print('===========================≠=≠=============================================================================')
+print()
+print()
+T()
+print('    88888888888 888    888 8888888 8888888b.  888     888 888    d8P  888    d8P         d8888     ')
+T()
+print(u'\u001b[32;1m        888     888    888   888   888   Y88b 888     888 888   d8P   888   d8P         d88888     ')
+T()
+print(u'\u001b[32;1m        888     888    888   888   888    888 888     888 888  d8P    888  d8P         d88P888     ')
+T()
+print(u'\u001b[32;1m        888     8888888888   888   888   d88P 888     888 888d88K     888d88K         d88P 888  ↑ ')
+T()
+print('        888     888    888   888   8888888P"  888     888 8888888b    8888888b       d88P  888     ')
+T()
+print(u'\u001b[32;1m        888     888    888   888   888 T88b   888     888 888  Y88b   888  Y88b     d88P   888     ')
+T()
+print('        888     888    888   888   888  T88b  Y88b. .d88P 888   Y88b  888   Y88b   d8888888888     ')
+T()
+print(u'\u001b[32;1m        888     888    888 8888888 888   T88b  "Y88888P"  888    Y88b 888    Y88b d88P     888     ')
+T()
+print(u'\u001b[33;1m                                                                                       MADHAVA     ')
+T()
+print(u"""
+\u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Question type wordlist generator
+\u001b[32;1m [\u001b[31;1m2\u001b[32;1m]. User input possiblitys wordlist generator
+
+
+        """)
+option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+def ques():    
+    print(u'\u001b[32;1m===========================≠=≠=============================================================================')
+    T()
+    print(u'\u001b[32;1m [*] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
+    T()
+    print(u'\u001b[32;1m [*] TRY TO FILL ALL ')
+    T()
+    print('===========================≠=≠=============================================================================')
+    print()
+    T()
+    print(u'\u001b[33;1m [!] I WANT TO KNOW ABOUT YOUR VICTOM. \u001b[0m')
+    T()
+    print()
+    T()
+
+    try:
+        fname=input(u'\u001b[36;1m [F] FILE NAME => \u001b[0m')
+        fn=fname
+        print()
+        a='1'
+        b='2'
+        c='3'
+        d='4'
+        e='5'
+        f='6'
+        g='7'
+        h='';i='';j='';k='';l='';m='';n='';o='';p='';q='';r='';s=''
+        t=''
+        u=''
+        v='00000004'
+        w='00000003'
+        x='00000002'
+        y='20012001'
+        z='1234567890'
+        z1='0123456789'
+        z2='87654321'
+        z3='987654321'
+        z4='123456789'
+        z5='itisnotpassword'
+        z6='20002000'
+        z7='secure'
+        z8='password'
+        z9='12345678'
+        m1=''
+        m2=''
+        m3=''
+        j1='';j2='';j3=''
+        o1='';o2='';o3=''
+        t1='';t2='';t3=''
+        x1=''
+        x2=''
+        x3=''
+        z11=''
+        z22=''
+        z33=''
+        z61=''
+        z62=''
+        z63=''
+        aaa=''
+        bbb=''
+        ccc=''
+        ddd=''
+        eee=''
+        name=input(u'\u001b[31;1m [*] NAME => ')
+        a=input(' [*] AGE => ')
+        try:
+            b=tuple(input(' [*] DOB => '))
+            m1=str(b[0]+b[1])
+            m2=str(b[2]+b[3])
+            m3=str(b[4]+b[5]+b[6]+b[7])
+        except:
+            pass
+        c=input(' [*] PHONE => ')
+        d=input(' [*] PLACE => ')
+        e=input(' [*] NICK NAME => ')
+        f=input(' [*] OFFICE => ')
+        g=input(' [*] FEVEROT THING => ')
+        h=input(' [*] LUCKEY NUMBER => ')
+        print()
+        print(u"\u001b[36;1m [≥] ABOUT VICTOM'S PARENTS \u001b[0m")
+        print()
+        i=input(u'\u001b[31;1m [*] FATHER NAME => ')
+        try:
+            j=tuple(input(' [*] DOB => '))
+            j1=str(j[0]+j[1])
+            j2=str(j[2]+j[3])
+            j3=str(j[4]+j[5]+j[6]+j[7])
+        except:
+            pass
+        k=input(" [*] FATHER'S NICK NAME => ")
+        l=input(" [*] FATHER'S FEVEROT THING => ")
+        m=input(" [*] FATHER'S PHONE => " )
+        n=input(' [*] MOTHER NAME => ')
+        try:
+            o=tuple(input(' [*] DOB => '))
+            o1=str(o[0]+o[1])
+            o2=str(o[2]+o[3])
+            o3=str(o[4]+o[5]+o[6]+o[7])
+        except:
+            pass
+        p=input(" [*] MOTHER'S NICK NAME => ")
+        q=input(" [*] MOTHER'S FEVETOR THING => ")
+        r=input(" [*] MOTHER'S PHONE NUMBER => ")
+        child=input(u"\u001b[36;1m [*] BIND ABOUT VICTOM'S CHILD (y|n) ? \u001b[0m")
+        if child == 'y':
+            print()
+            print(u"\u001b[32;1m [≥] VICTOM'S CHILD \u001b[31;1m")
+            print()
+            s=input('    [*] CHILD NAME => ')
+            try:
+                t=tuple(input('    [*] DOB => '))
+                t1=str(t[0]+t[1])
+                t2=str(t[2]+t[3])
+                t3=str(t[4]+t[5]+t[6]+t[7])
+            except:
+                pass
+            u=input('    [*] NICK NAME => ')
+            v=input('    [*] FEVEROT COLOR => ')
+            w=input('    [*] ANOTHER CHILD NAME => ')
+            try:
+                x=tuple(input('    [*] DOB => '))
+                x1=str(x[0]+x[1])
+                x2=str(x[2]+x[3])
+                x3=str(x[4]+x[5]+x[6]+x[7])
+            except:
+                pass
+            y=input('    [*] NICKNAME => ')
+        lpart=input(u"\u001b[36;1m [*] BIND ABOUT VICTOM'S LIFE PARTNER (y|n) ? \u001b[0m ")
+        if lpart == 'y':
+            print()
+            print(u"\u001b[32;1m [≥] VICTOM'S LIFE PARTNER \u001b[31;1m")
+            print()
+            z=input('    [*] NAME => ')
+            try:
+                z1=tuple(input('    [*] DOB => '))
+                z11=str(z1[0]+z1[1])
+                z22=str(z1[2]+z1[3])
+                z33=str(z1[4]+z1[5]+z1[6]+z1[7])
+            except:
+                pass
+            z2=input('    [*] NICK NAME => ')
+            z3=input('    [*] PHONE => ')
+            z4=input('    [*] FEVEROT => ')
+        frend=input(u"\u001b[36;1m [*] BIND ABOUT VICTOM'S FRIEND (Y|N) ? \u001b[0m ")
+        if frend == 'y':
+            print()
+            print(u"\u001b[32;1m [≥] VICTOME'S FRIEND\u001b[31;1m")
+            print()
+            z5=input('    [*] NAME => ')
+            try:
+                z6=tuple(input('    [*] DOB => '))
+                z61=str(z6[0]+z6[1])
+                z62=str(z6[2]+z6[3])
+                z63=str(z6[4]+z6[5]+z6[6]+z6[7])
+            except:
+                pass
+            z7=input('    [*] FEVEROT => ')
+            z8=input('    [*] NICK NAME => ')
+            z9=input('    [*] PHONE => ')
+
+
+        uc=input(u'\u001b[36;1m [*] UPPER CASE COMITE (Y|N) ? \u001b[0m')
+        nm=input(u'\u001b[36;1m [*] END WITH NUMBER (Y|N) ? \u001b[0m')
+        sc=input(u'\u001b[36;1m [*] SPECIAL CHARACTOR COMIT (Y|N)? ')
+        if sc == 'y':
+            aaa='@'
+            bbb='*'
+            ccc='#'
+            ddd='$'
+            eee='%'
+        #############################################################
+        count=0
+        fname=open(fname,'a')
+        for n in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
+            for i in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
+                count+=1
+                C=str(count)
+                Z=n+i
+                fname.write(Z)
+                fname.write('\n')
+                if uc == 'y':
+                    ZZZ=Z.capitalize()
+                    ZZ=Z.upper()
+                    fname.write(ZZ)
+                    fname.write('\n')
+                    fname.write(ZZZ)
+                    fname.write('\n')
+                if nm == y:
+                    N=n+C
+                    NN=i+C
+                    NNN=n+i+C
+                    fname.write(N)
+                    fname.write('\n')
+                    fname.write(NN)
+                    fname.write('\n')
+                    fname.write(NNN)
+                    fname.write('\n')
+
+        fname.close()
+        print('===========================≠=≠=============================================================================')
+        print(u'\u001b[32;1m [*] SUCESSFULLY GENERATED')
+        T()
+        print(u'\u001b[33;1m [*] FILE NAME => ',fn)
+        T()
+        print(u'\u001b[33;1m')
+        print(u'===========================≠=≠=============================================================================\u001b[0m')
+    except:
+        print(sys.exc_info())
+        print(u'===========================≠=≠=============================================================================\u001b[0m')
+
+def upass():
+    try:
+
+        print(u'\u001b[32m===========================≠=≠============================================================================= \u001b[0m')
+        line=0
+        chars=input(u'\u001b[33;1m [ CHARECTORS ]|> \u001b[34;1m')
+        print(u'\u001b[32;1m [ LENGTH OF CHARACTOR ]')
+        min_=int(input(u'\u001b[33;1m [ MINIMUM ]|> \u001b[34;1m'))
+        max_=int(input(u'\u001b[33;1m [ MAXIMUM ]|> \u001b[34;1m'))
+        
+        if min_ > max_:
+            print(u'\u001b[31;1m [X] MINIMUM VALUE MUTS BE SMALLER THEN MAXIMUM VALUE')
+            upass()
+        up=input(u"\u001b[36;1m Uppercase comitement(y/n)? ")
+        f=input(u'\u001b[33;1m [ FILENAME ]|> \u001b[34;1m')
+        if f == '':
+            f="Thirukka.txt"
+        ff=f
+        f = open(f, 'w')
+        for n in range(min_,max_ + 1):
+            for i in itertools.product(chars, repeat=n):
+                line+=1
+                num=line
+                a = ''.join(i)
+                if up == 'y' or up == 'Y':
+                    c=a.upper()
+                    e=a.capitalize()
+                    f.write("%s\n" % e)
+                    f.write("%s\n" % c)
+                d=a.lower()
+                f.write("%s\n" % d)
+                if line == 100000:
+                    print(u"\r\u001b[36;1m [*] Generating Background......")
+                if line >= 100000:
+                    pass
+                else:
+                    sys.stdout.write(u'\u001b[0m\r [ \u001b[32;1mGENERATING\u001b[0m ] >>>>\u001b[32m [ %s ]' % a)
+                if num == 200000:
+                    print(' [*] 20M words are calculated')
+                if num == 500000:
+                    print(' [*] 50M words are calculated ')
+                if num == 1000000:
+                    print(' [*] 100M words are calculated ')
+                if num == 2500000:
+                    print(' [*] 250M words are calculated')
+                if num == 5000000:
+                    print(' [*] 500M words are calculated ')
+                if num == 7500000:
+                    print(' [*] 750M words are calculated ')
+                if num == 10000000:
+                    print(' [*] 1000M words are calculated ')
+                if num == 50000000:
+                    print(' [*] 5000M words are calculated ')
+                if num == 75000000:
+                    print(' [*] 7500M words are calculated ')
+                if num == 100000000:
+                    print(' [*] 10000M words are calculated ')
+                if num == 500000000:
+                    print(' [*] 50000M words are calculated ')
+                if num == 750000000:
+                    print(' [*] 75000M words are calculated ')
+                if num == 1000000000:
+                    print(' [*] 100000M words are calculated ')
+                if num == 5000000000:
+                    print(' [*] 500000M words are calculated ')
+                if num == 50000000000:
+                    print(' [*] 5000000M words are calculated ')
+                sys.stdout.flush()
+        f.close()
+        print()
+        print(u'\u001b[32;1m [*] Generated sucessfully ..! ')
+        print(u'\u001b[32;1m [*] File name :',ff)
+        if up == 'y' or up == 'Y': 
+            print(u'\u001b[32;1m [*] NO.OF.Lines : ',line*3)
+        else:
+            print(u'\u001b[32;1m [*] NO.OF.Lines : ',line)
+        print(u"\u001b[0m")
+    except:
+        print(u'\u001b[31;1m [X] INVALIED OPTION')
+        print(sys.exc_info())
+        upass()
+        print(u"\u001b[0m")
+if option == "1":
+    ques()
+if option == "2":
+    upass()
+else:
+    print(u"\u001b[31;1m Option not fount")
