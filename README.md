@@ -6,7 +6,8 @@
 * PYTHON3
 
 ## SETUP:
-* chmod +x thirukka
+* chmod +x setup
+* ./setup
 ## RUN:
 * ./thirukka
 
