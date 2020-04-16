@@ -1,0 +1,74 @@
+#!/bin/bash
+python3 -c "print(u'\u001b[32;1m')"
+chmod +x setup
+function Termux(){
+	if [ -e /data/data/com.termux/files/usr/bin/thirukka ]
+	then
+		echo
+	else
+		cp thirukka /data/data/com.termux/files/usr/bin/thirukka
+		chmod +x /data/data/com.termux/files/usr/bin/thirukka
+		chmod +x thirukka
+		
+	fi
+	if [ -e /data/data/com.termux/files/usr/bin/python3 ]
+	then
+		a='a'
+	else
+		
+		pkg install python3
+	fi
+}
+function Linux(){
+	if [ -e /usr/bin/thirukka ]
+	then
+		echo
+	else
+		cp thirukka /usr/bin/thirukka
+		chmod +x /usr/bin/thirukka
+		chmod +x thirukka
+		
+	fi
+	if [ -e /bin/thirukka ]
+	then
+		echo
+	else
+		cp thirukka /bin/thirukka
+		chmod +x /bin/thirukka
+		chmod +x thirukka
+		
+	fi
+}
+function Main(){
+	echo ""
+	echo "From R-5-C:"
+	echo ""
+	echo "•----------------------------------•"
+	echo "|                                  |"
+	echo "|   [1] Setup for Linux            |"
+	echo "|   [2] Setup for Termux           |"
+	echo "|                                  |"
+	echo "•----------------------------------•"
+	echo ""
+	echo -n "Select any one of these > "
+	read option
+	python3 -c "print(u'\u001b[31;1m')"	
+	if [ $option = "1" ]
+	then
+		python3 -c "print(u'\u001b[31;1m')"
+		Linux
+	fi
+
+	if [ $option = "2" ]
+	then
+		python3 -c "print(u'\u001b[31;1m')"
+		Termux
+	fi
+	python3 -c "print(u'\u001b[0m')"
+	echo " [*] Rerun “./setup” while error occered"
+	echo " [*] Simply type thirukka"
+}
+Main
+
+	
+
