@@ -79,6 +79,9 @@ function Main(){
 		python3 -c "print(u'\u001b[31;1m')"
 		Termux
 	fi
+	python3 -c "print(u'\u001b[33;1m')"
+	sleep 2
+	cat thirukka
 	python3 -c "print(u'\u001b[0m')"
 	echo " [*] Rerun “./setup” while error occered"
 	echo " [*] Simply type thirukka"
