@@ -1,10 +1,13 @@
 #!/bin/bash
 python3 -c "print(u'\u001b[32;1m')"
+echo "What's the thing inside setup ?"
+sleep 1.3
+cat setup
 chmod +x setup
 function Termux(){
 	if [ -e /data/data/com.termux/files/usr/bin/thirukka ]
 	then
-		echo
+		
 	else
 		cp thirukka /data/data/com.termux/files/usr/bin/thirukka
 		chmod +x /data/data/com.termux/files/usr/bin/thirukka
