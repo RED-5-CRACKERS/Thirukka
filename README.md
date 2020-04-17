@@ -6,8 +6,13 @@
 * PYTHON3
 
 ## SETUP:
-* chmod +x setup
-* ./setup
+
+## git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && clear && pwd && echo && ls
+## (COPY AND PAST) ☝️😁
+
+
+
+
 ## RUN:
 * ./thirukka
 
