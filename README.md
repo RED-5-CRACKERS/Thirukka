@@ -5,9 +5,9 @@
 ## REQUIRED:
 * PYTHON3
 
-## SETUP:
+## INSTLATION
 
-## git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && clear && pwd && echo && ls
+git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && clear && pwd && echo && ls
 ## (COPY AND PAST) ☝️😁
 
 
