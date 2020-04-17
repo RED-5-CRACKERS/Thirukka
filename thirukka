@@ -30,13 +30,15 @@ print(u'\u001b[32;1m        888     888    888 8888888 888   T88b  "Y88888P"  88
 T()
 print(u'\u001b[33;1m                                                                                       MADHAVA     ')
 T()
-print(u"""
+def opt():
+    print(u"""
 \u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Question type wordlist generator
 \u001b[32;1m [\u001b[31;1m2\u001b[32;1m]. User input possiblitys wordlist generator
+\u001b[32;1m [\u001b[31;1mQ\u001b[32;1m].Quit
 
-
-        """)
-option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+            """)
+    option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+opt()
 def ques():    
     print(u'\u001b[32;1m===========================≠=≠=============================================================================')
     T()
@@ -54,6 +56,8 @@ def ques():
 
     try:
         fname=input(u'\u001b[36;1m [F] FILE NAME => \u001b[0m')
+        if fname == "":
+            fname="wordlist.txt"
         fn=fname
         print()
         a='1'
@@ -249,7 +253,6 @@ def ques():
 
 def upass():
     try:
-
         print(u'\u001b[32m===========================≠=≠============================================================================= \u001b[0m')
         line=0
         chars=input(u'\u001b[33;1m [ CHARECTORS ]|> \u001b[34;1m')
@@ -333,5 +336,9 @@ if option == "1":
     ques()
 if option == "2":
     upass()
+if option == "q" or option == "Q":
+    print(u"\u001b[36;1m  Bye \u001b[0m")
+    exit()
 else:
-    print(u"\u001b[31;1m Option not fount")
+    print(u"\u001b[31;1m [x] Option not fount\u001b[0m")
+    opt()
