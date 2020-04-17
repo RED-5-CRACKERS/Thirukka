@@ -11,3 +11,4 @@
 ## RUN:
 * ./thirukka
 
+<img src=".thirukka.jpg" />
