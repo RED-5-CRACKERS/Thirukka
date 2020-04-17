@@ -34,10 +34,10 @@ def opt():
     print(u"""
 \u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Question type wordlist generator
 \u001b[32;1m [\u001b[31;1m2\u001b[32;1m]. User input possiblitys wordlist generator
-\u001b[32;1m [\u001b[31;1mQ\u001b[32;1m].Quit
+\u001b[32;1m [\u001b[31;1mQ\u001b[32;1m]. Quit
 
             """)
-    option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
 opt()
 def ques():    
     print(u'\u001b[32;1m===========================≠=≠=============================================================================')
@@ -342,3 +342,5 @@ if option == "q" or option == "Q":
 else:
     print(u"\u001b[31;1m [x] Option not fount\u001b[0m")
     opt()
+    option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+
