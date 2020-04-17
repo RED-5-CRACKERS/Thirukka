@@ -7,7 +7,7 @@ chmod +x setup
 function Termux(){
 	if [ -e /data/data/com.termux/files/usr/bin/thirukka ]
 	then
-		chmod +x Thirukka	
+		chmod +x thirukka	
 	else
 		cp thirukka /data/data/com.termux/files/usr/bin/thirukka
 		chmod +x /data/data/com.termux/files/usr/bin/thirukka
@@ -25,7 +25,7 @@ function Termux(){
 function Linux(){
 	if [ -e /usr/bin/thirukka ]
 	then
-		chmod +x Thirukka
+		chmod +x thirukka
 	else
 		cp thirukka /usr/bin/thirukka
 		chmod +x /usr/bin/thirukka
@@ -34,7 +34,7 @@ function Linux(){
 	fi
 	if [ -e /bin/thirukka ]
 	then
-		chmod +x Thirukka
+		chmod +x thirukka
 	else
 		cp thirukka /bin/thirukka
 		chmod +x /bin/thirukka
@@ -43,7 +43,7 @@ function Linux(){
 	fi
 }
 function Main(){
-	echo ""
+	echo "===================================="
 	echo "From R-5-C:"
 	echo ""
 	echo "•----------------------------------•"
