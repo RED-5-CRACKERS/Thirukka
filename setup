@@ -19,7 +19,8 @@ chmod +x thirukka
 function Termux(){
 	if [ -e /data/data/com.termux/files/usr/bin/thirukka ]
 	then
-		chmod +x thirukka	
+		cp thirukka /data/data/com.termux/files/usr/bin/thirukka
+                chmod +x /data/data/com.termux/files/usr/bin/thirukka	
 	else
 		cp thirukka /data/data/com.termux/files/usr/bin/thirukka
 		chmod +x /data/data/com.termux/files/usr/bin/thirukka
@@ -38,6 +39,9 @@ function Linux(){
 	if [ -e /usr/bin/thirukka ]
 	then
 		chmod +x thirukka
+                cp thirukka /usr/bin/thirukka
+                chmod +x /usr/bin/thirukka
+
 	else
 		cp thirukka /usr/bin/thirukka
 		chmod +x /usr/bin/thirukka
@@ -47,6 +51,8 @@ function Linux(){
 	if [ -e /bin/thirukka ]
 	then
 		chmod +x thirukka
+                cp thirukka /bin/thirukka
+                chmod +x /bin/thirukka
 	else
 		cp thirukka /bin/thirukka
 		chmod +x /bin/thirukka
