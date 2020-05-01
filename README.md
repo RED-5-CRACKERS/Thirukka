@@ -17,4 +17,4 @@ git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod
 * ./thirukka
 
 <img src=".thirukka.jpg" />
-mit
+
