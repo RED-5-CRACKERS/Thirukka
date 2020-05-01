@@ -13,7 +13,7 @@ git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod
 
 
 
-## RUN:
+<> RUN:
 * ./thirukka
 
 <img src=".thirukka.jpg" />
