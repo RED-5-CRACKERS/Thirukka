@@ -8,7 +8,7 @@ def T():
     time.sleep(0.04)
 T()
 print('\u001b[32;1m')
-print('===========================≠=≠=============================================================================')
+print('===========================≠=≠======================================================================')
 print()
 print()
 T()
@@ -37,16 +37,24 @@ def opt():
 \u001b[32;1m [\u001b[31;1mQ\u001b[32;1m]. Quit
 
             """)
-opt()
-option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+
+    option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+    if option == "1":
+        ques()
+    elif option == "2":
+        upass()
+    elif option == "q" or option == "Q":
+        exit()
+    esle:
+        option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
 def ques():    
-    print(u'\u001b[32;1m===========================≠=≠=============================================================================')
+    print(u'\u001b[32;1m===========================≠=≠=======================================================================')
     T()
     print(u'\u001b[32;1m [*] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
     print(u'\u001b[32;1m [*] TRY TO FILL ALL ')
     T()
-    print('===========================≠=≠=============================================================================')
+    print('===========================≠=≠=======================================================================')
     print()
     T()
     print(u'\u001b[33;1m [!] I WANT TO KNOW ABOUT YOUR VICTOM. \u001b[0m')
@@ -332,15 +340,15 @@ def upass():
         print(sys.exc_info())
         upass()
         print(u"\u001b[0m")
-if option == "1":
-    ques()
-if option == "2":
-    upass()
-if option == "q" or option == "Q":
-    print(u"\u001b[36;1m  Bye \u001b[0m")
-    exit()
-else:
-    print(u"\u001b[31;1m [x] Option not fount\u001b[0m")
-    opt()
-    option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
+
+
+
+
+
+
+
+
+
+
+
 
