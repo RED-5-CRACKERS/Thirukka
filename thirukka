@@ -55,7 +55,7 @@ def opt():
             if option == "pwd":
                 os.system("pwd")
             if option == "clear":
-                os.systet("clear")
+                os.system("clear")
             if option == "?":
                 print(u"""\u001b[32;1m
                       1          -       Question type wordlist generator(mini interview ) :)
