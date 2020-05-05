@@ -13,23 +13,23 @@ print('===========================≠=≠=======================================
 print()
 print()
 T()
-print('    88888888888 888    888 8888888 8888888b.  888     888 888    d8P  888    d8P         d8888     ')
+print(' 88888888888 888    888 8888888 8888888b.  888     888 888    d8P  888    d8P         d8888     ')
 T()
-print(u'\u001b[32;1m        888     888    888   888   888   Y88b 888     888 888   d8P   888   d8P         d88888     ')
+print(u'\u001b[32;1m     888     888    888   888   888   Y88b 888     888 888   d8P   888   d8P         d88888     ')
 T()
-print(u'\u001b[32;1m        888     888    888   888   888    888 888     888 888  d8P    888  d8P         d88P888     ')
+print(u'\u001b[32;1m     888     888    888   888   888    888 888     888 888  d8P    888  d8P         d88P888     ')
 T()
-print(u'\u001b[32;1m        888     8888888888   888   888   d88P 888     888 888d88K     888d88K         d88P 888  ↑ ')
+print(u'\u001b[32;1m     888     8888888888   888   888   d88P 888     888 888d88K     888d88K         d88P 888  ↑ ')
 T()
-print('        888     888    888   888   8888888P"  888     888 8888888b    8888888b       d88P  888     ')
+print('     888     888    888   888   8888888P"  888     888 8888888b    8888888b       d88P  888     ')
 T()
-print(u'\u001b[32;1m        888     888    888   888   888 T88b   888     888 888  Y88b   888  Y88b     d88P   888     ')
+print(u'\u001b[32;1m     888     888    888   888   888 T88b   888     888 888  Y88b   888  Y88b     d88P   888     ')
 T()
-print('        888     888    888   888   888  T88b  Y88b. .d88P 888   Y88b  888   Y88b   d8888888888     ')
+print('     888     888    888   888   888  T88b  Y88b. .d88P 888   Y88b  888   Y88b   d8888888888     ')
 T()
-print(u'\u001b[32;1m        888     888    888 8888888 888   T88b  "Y88888P"  888    Y88b 888    Y88b d88P     888     ')
+print(u'\u001b[32;1m     888     888    888 8888888 888   T88b  "Y88888P"  888    Y88b 888    Y88b d88P     888     ')
 T()
-print(u'\u001b[33;1m                                                                                       MADHAVA     ')
+print(u'\u001b[33;1m                                                                                        R5C     ')
 T()
 def opt():
     print(u"""
@@ -51,31 +51,50 @@ def opt():
             else:
                 pass   #option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
             if option == "ls":
-                os.system("ls")
+                print(u"\u001b[0m----------------------------------------")
+                try:
+                    os.system("ls -1sh")
+                except:
+                    os.system("dir")
+                print(u"\u001b[0m----------------------------------------")
             if option == "pwd":
-                os.system("pwd")
+                print(u"\u001b[0m----------------------------------------")
+                try:
+                    os.system("pwd")
+                except:
+                    print("Sorry only in linux")
+                print(u"\u001b[0m----------------------------------------")
             if option == "clear":
-                os.system("clear")
+                print(u"\u001b[0m----------------------------------------")
+                try:
+                    os.system("clear")
+                except:
+                    print(u"\u001b[0m----------------------------------------")
+                    print("Sorry only in linux")
+                    print(u"\u001b[0m----------------------------------------")
             if option == "?":
-                print(u"""\u001b[32;1m
-                      1          -       Question type wordlist generator(mini interview ) :)
-                      2          -       Generate all possiblityes of leter given by user
-                      ?          -       This banner
-                      ls         -       list directory contents
-                      pwd        -       present working directosy
-                      clear      -       Clear screen
-                      q or Q     -       Quit
+                print(u"""\u001b[32;1m                            
+\u001b[32;4;1mTool\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m 
+    1        -       Question type wordlist generator(mini interview ) :)
+    2        -       Generate all possiblityes of leter given by user
+    ?        -       This banner
+\u001b[32;4;1mSystem\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+    ls       -       list directory contents
+    pwd      -       present working directosy
+    clear    -       Clear screen
+\u001b[32;4;1mExit\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+    q or Q   -       Quit
                       \u001b[0m""")
     except:
         pass
 def ques():    
-    print(u'\u001b[32;1m===========================≠=≠===================================================================')
+    print(u'\u001b[32;1m===========================≠=≠================================================================')
     T()
     print(u'\u001b[32;1m [*] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
     print(u'\u001b[32;1m [*] TRY TO FILL ALL ')
     T()
-    print('===========================≠=≠=======================================================================')
+    print('===========================≠=≠====================================================================')
     print()
     T()
     print(u'\u001b[33;1m [!] I WANT TO KNOW ABOUT YOUR VICTOM. \u001b[0m')
@@ -298,6 +317,7 @@ def upass():
             f="Thirukka.txt"
         ff=f
         f = open(f, 'w')
+        fc=0
         for n in range(min_,max_ + 1):
             for i in itertools.product(chars, repeat=n):
                 line+=1
@@ -310,6 +330,9 @@ def upass():
                     f.write("%s\n" % c)
                 d=a.lower()
                 f.write("%s\n" % d)
+                if fc == 15000:
+                    print(u" \u001b[32;4;1mGenerating\u001b[0m  [>>>> \u001b[33;4;1m{}\u001b[0m\r <<<<]".format(a),end="")
+                """
                 if line == 100000:
                     print(u"\r\u001b[36;1m [*] Generating Background......")
                 if line >= 100000:
@@ -346,15 +369,14 @@ def upass():
                     print(' [*] 500000M words are calculated ')
                 if num == 50000000000:
                     print(' [*] 5000000M words are calculated ')
+                    """
                 sys.stdout.flush()
         f.close()
-        print()
-        print(u'\u001b[32;1m [*] Generated sucessfully ..! ')
-        print(u'\u001b[32;1m [*] File name :',ff)
+        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] File name : \u001b[33;4;1m{}\u001b[0m             '.format(ff))
         if up == 'y' or up == 'Y': 
-            print(u'\u001b[32;1m [*] NO.OF.Lines : ',line*3)
+            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : u001b[33;4;1m{}\u001b[0m        '.format(line*3))
         else:
-            print(u'\u001b[32;1m [*] NO.OF.Lines : ',line)
+            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : u001b[33;4;1m{}\u001b[0m        '.format(line))
         print(u"\u001b[0m")
     except:
         print(u'\u001b[31;1m [X] INVALIED OPTION')
