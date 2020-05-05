@@ -27,9 +27,9 @@ print(u'\u001b[32;1m     888     888    888   888   888 T88b   888     888 888  
 T()
 print('     888     888    888   888   888  T88b  Y88b. .d88P 888   Y88b  888   Y88b   d8888888888     ')
 T()
-print(u'\u001b[32;1m     888     888    888 8888888 888   T88b  "Y88888P"  888    Y88b 888    Y88b d88P     888     ')
+print(u'\u001b[32;1m     888     888    888 8888888 888   T88b  "Y88888P"  888    Y88b 888    Y88b d88P     \u001b[33;1mR5C     ')
 T()
-print(u'\u001b[33;1m                                                                                        R5C     ')
+print(u'\u001b[33;1m                                                                                                 ')
 T()
 def opt():
     print(u"""
@@ -74,15 +74,18 @@ def opt():
                     print(u"\u001b[0m----------------------------------------")
             if option == "?":
                 print(u"""\u001b[32;1m                            
-\u001b[32;4;1mTool\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m 
+ \u001b[32;4;1mTool\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+
     1        -       Question type wordlist generator(mini interview ) :)
     2        -       Generate all possiblityes of leter given by user
     ?        -       This banner
-\u001b[32;4;1mSystem\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+ \u001b[32;4;1mSystem\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+
     ls       -       list directory contents
     pwd      -       present working directosy
     clear    -       Clear screen
-\u001b[32;4;1mExit\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+ \u001b[32;4;1mExit\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+    
     q or Q   -       Quit
                       \u001b[0m""")
     except:
@@ -90,9 +93,9 @@ def opt():
 def ques():    
     print(u'\u001b[32;1m===========================≠=≠================================================================')
     T()
-    print(u'\u001b[32;1m [*] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
+    print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
-    print(u'\u001b[32;1m [*] TRY TO FILL ALL ')
+    print(u'\u001b[32;1m [\u001b[31;1m*\u001m[31;1m] TRY TO FILL ALL ')
     T()
     print('===========================≠=≠====================================================================')
     print()
@@ -148,10 +151,10 @@ def ques():
         z62=''
         z63=''
         aaa=''
-        bbb=''
-        ccc=''
-        ddd=''
-        eee=''
+        bbb='yot dont know'
+        ccc='secrete'
+        ddd='is is not password'
+        eee='secret'
         name=input(u'\u001b[31;1m [*] NAME => ')
         a=input(' [*] AGE => ')
         try:
@@ -288,20 +291,20 @@ def ques():
                     fname.write('\n')
 
         fname.close()
-        print('===========================≠=≠========================================================================')
+        print('===========================≠=≠===================================================================')
         print(u'\u001b[32;1m [*] SUCESSFULLY GENERATED')
         T()
         print(u'\u001b[33;1m [*] FILE NAME => ',fn)
         T()
         print(u'\u001b[33;1m')
-        print(u'===========================≠=≠========================================================================\u001b[0m')
+        print(u'===========================≠=≠===================================================================\u001b[0m')
     except:
         print(sys.exc_info())
-        print(u'===========================≠=≠========================================================================\u001b[0m')
+        print(u'===========================≠=≠===================================================================\u001b[0m')
 
 def upass():
     try:
-        print(u'\u001b[32m===========================≠=≠======================================================================== \u001b[0m')
+        print(u'\u001b[32m===========================≠=≠=================================================================== \u001b[0m')
         line=0
         chars=input(u'\u001b[33;1m [ CHARECTORS ]|> \u001b[34;1m')
         print(u'\u001b[32;1m [ LENGTH OF CHARACTOR ]')
@@ -314,7 +317,7 @@ def upass():
         up=input(u"\u001b[36;1m Uppercase comitement(y/n)? ")
         f=input(u'\u001b[33;1m [ FILENAME ]|> \u001b[34;1m')
         if f == '':
-            f="Thirukka.txt"
+            f="wordlist.txt"
         ff=f
         f = open(f, 'w')
         fc=0
@@ -330,8 +333,12 @@ def upass():
                     f.write("%s\n" % c)
                 d=a.lower()
                 f.write("%s\n" % d)
-                if fc == 15000:
-                    print(u" \u001b[32;4;1mGenerating\u001b[0m  [>>>> \u001b[33;4;1m{}\u001b[0m\r <<<<]".format(a),end="")
+                if fc == 13000:
+                    print(u" \u001b[32;4;1mGenerating\u001b[0m  【 \u001b[36;4;1m{}\u001b[0m 】\r".format(a),end="")
+                    fc=0
+                else:
+                    fc+=1
+
                 """
                 if line == 100000:
                     print(u"\r\u001b[36;1m [*] Generating Background......")
@@ -374,28 +381,13 @@ def upass():
         f.close()
         print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] File name : \u001b[33;4;1m{}\u001b[0m             '.format(ff))
         if up == 'y' or up == 'Y': 
-            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : u001b[33;4;1m{}\u001b[0m        '.format(line*3))
+            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : \u001b[33;4;1m{}\u001b[0m        '.format(line*3))
         else:
-            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : u001b[33;4;1m{}\u001b[0m        '.format(line))
+            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : \u001b[33;4;1m{}\u001b[0m        '.format(line))
         print(u"\u001b[0m")
     except:
-        print(u'\u001b[31;1m [X] INVALIED OPTION')
+        print(u'\u001b[31;1m                  ******* \u001b[0m')
         print(sys.exc_info())
         upass()
-        print(u"\u001b[0m")
-
-        
-        
+        print(u"\u001b[0m")        
 opt()
-
-
-
-
-
-
-
-
-
-
-
-
