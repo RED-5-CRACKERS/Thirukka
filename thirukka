@@ -95,12 +95,12 @@ def ques():
     T()
     print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
-    print(u'\u001b[32;1m [\u001b[31;1m*\u001m[31;1m] TRY TO FILL ALL ')
+    print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] TRY TO FILL ALL ')
     T()
     print('===========================≠=≠====================================================================')
     print()
     T()
-    print(u'\u001b[33;1m [!] I WANT TO KNOW ABOUT YOUR VICTOM. \u001b[0m')
+    print(u'\u001b[32;1m [\u001b[33;1m!\u001b[32;1m] I WANT TO KNOW ABOUT YOUR VICTOM. \u001b[0m')
     T()
     print()
     T()
@@ -388,6 +388,6 @@ def upass():
     except:
         print(u'\u001b[31;1m                  ******* \u001b[0m')
         print(sys.exc_info())
-        upass()
+
         print(u"\u001b[0m")        
 opt()
