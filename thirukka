@@ -306,16 +306,28 @@ def upass():
     try:
         print(u'\u001b[32m===========================≠=≠=================================================================== \u001b[0m')
         line=0
-        chars=input(u'\u001b[33;1m [ CHARECTORS ]|> \u001b[34;1m')
-        print(u'\u001b[32;1m [ LENGTH OF CHARACTOR ]')
-        min_=int(input(u'\u001b[33;1m [ MINIMUM ]|> \u001b[34;1m'))
-        max_=int(input(u'\u001b[33;1m [ MAXIMUM ]|> \u001b[34;1m'))
-        
+        chars=""
+        min_=""
+        max_=""
+        while chars == "":
+            chars=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/charectors\u001b[0m)> \u001b[36;1m')
+        while min_ == "":
+            try:
+                min_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMIN\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[36;1m'))
+            except:
+                pass
+        while max_ == "":
+            try:
+                max_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMAX\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[36;1m'))
+            except:
+                pass
         if min_ > max_:
-            print(u'\u001b[31;1m [X] MINIMUM VALUE MUTS BE SMALLER THEN MAXIMUM VALUE')
+            min_=""
+            max_=""
+            print(u'\u001b[31;1mMINIMUM VALUE MUTS BE SMALLER THEN MAXIMUM VALUE')
             upass()
-        up=input(u"\u001b[36;1m Uppercase comitement(y/n)? ")
-        f=input(u'\u001b[33;1m [ FILENAME ]|> \u001b[34;1m')
+        up=input(u"\u001b[36;1mUppercase comitement ? ")
+        f=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/filename:wordlist.txt\u001b[0m)> \u001b[36;1m')
         if f == '':
             f="wordlist.txt"
         ff=f
@@ -326,7 +338,7 @@ def upass():
                 line+=1
                 num=line
                 a = ''.join(i)
-                if up == 'y' or up == 'Y':
+                if up == 'y' or up == 'Y' or up == "yes" or up == "Yes":
                     c=a.upper()
                     e=a.capitalize()
                     f.write("%s\n" % e)
