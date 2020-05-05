@@ -349,45 +349,6 @@ def upass():
                     fc=0
                 else:
                     fc+=1
-
-                """
-                if line == 100000:
-                    print(u"\r\u001b[36;1m [*] Generating Background......")
-                if line >= 100000:
-                    pass
-                else:
-                    sys.stdout.write(u'\u001b[0m\r [ \u001b[32;1mGENERATING\u001b[0m ] >>>>\u001b[32m [ %s ]' % a)
-                if num == 200000:
-                    print(' [*] 20M words are calculated')
-                if num == 500000:
-                    print(' [*] 50M words are calculated ')
-                if num == 1000000:
-                    print(' [*] 100M words are calculated ')
-                if num == 2500000:
-                    print(' [*] 250M words are calculated')
-                if num == 5000000:
-                    print(' [*] 500M words are calculated ')
-                if num == 7500000:
-                    print(' [*] 750M words are calculated ')
-                if num == 10000000:
-                    print(' [*] 1000M words are calculated ')
-                if num == 50000000:
-                    print(' [*] 5000M words are calculated ')
-                if num == 75000000:
-                    print(' [*] 7500M words are calculated ')
-                if num == 100000000:
-                    print(' [*] 10000M words are calculated ')
-                if num == 500000000:
-                    print(' [*] 50000M words are calculated ')
-                if num == 750000000:
-                    print(' [*] 75000M words are calculated ')
-                if num == 1000000000:
-                    print(' [*] 100000M words are calculated ')
-                if num == 5000000000:
-                    print(' [*] 500000M words are calculated ')
-                if num == 50000000000:
-                    print(' [*] 5000000M words are calculated ')
-                    """
                 sys.stdout.flush()
         f.close()
         print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] File name : \u001b[33;4;1m{}\u001b[0m             '.format(ff))
