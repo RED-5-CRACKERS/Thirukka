@@ -1,20 +1,21 @@
-# Thirukka
+***
+## _Thirukka_
 
-## *WORD-LIST-GENARATOR*
-
-## REQUIRED:
+### _WORD-LIST-GENARATOR_
+***
+### _REQUIRED:_
 * PYTHON3
 
-## INSTLATION
+### _INSTLATION
 
-```git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && pwd && echo && ls ```
-## (COPY AND PAST) ☝️😁
-
-
+> ```git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && pwd && echo && ls ```
+> ## (COPY AND PAST) ☝️😁
 
 
-## RUN:
-``` ./thirukka ```
 
-<img src=".thirukka.jpg" />
 
+### _RUN:
+> ``` ./thirukka ```
+***
+> <img src=".thirukka.jpg" />
+***
