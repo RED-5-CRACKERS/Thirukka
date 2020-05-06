@@ -259,13 +259,12 @@ def ques():
             z8=input('    [*] NICK NAME => ')
             z9=input('    [*] PHONE => ')
 
-
         uc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Upper Case ? \u001b[0m')
         nm=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Number ? \u001b[0m')
         sc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Special Charectors ? \u001b[0m')
         Space=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Include Space ? \u001b[0m')
         if Space == "y":
-            space=" "
+            space=""
         if sc == 'y':
             aaa='@'
             bbb='*'
@@ -398,7 +397,7 @@ def upass():
                 if fc == 15000:
                     lis=["↓","•","↑"]
                     ran=random.choice(lis)
-                    print(u"\u001b[36;1m ",ran,"\u001b[32;4;1mGenerating\u001b[0m   【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
+                    print(u"\u001b[36;1m ",ran,"\u001b[32;4;1mGenerating\u001b[0m【\u001b[36;4;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
                     fc=0
                 else:
                     fc+=1
