@@ -394,7 +394,7 @@ def upass():
                     f.write("%s\n" % c)
                 d=a
                 f.write("%s\n" % d)
-                if fc == 15000:
+                if fc == 13532:
                     lis=["↓","•","↑","↑","↑","↓","↑"]
                     ran=random.choice(lis)
                     print(u"\u001b[36;1m ",ran,"\u001b[32;4;1mGenerating\u001b[0m【\u001b[36;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
