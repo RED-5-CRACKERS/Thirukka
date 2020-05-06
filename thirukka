@@ -392,10 +392,10 @@ def upass():
                     e=a.capitalize()
                     f.write("%s\n" % e)
                     f.write("%s\n" % c)
-                d=a.lower()
+                d=a
                 f.write("%s\n" % d)
                 if fc == 15000:
-                    lis=["↓","•","↑"]
+                    lis=["↓","•","↑","↑","↑","↓","↑"]
                     ran=random.choice(lis)
                     print(u"\u001b[36;1m ",ran,"\u001b[32;4;1mGenerating\u001b[0m【\u001b[36;4;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
                     fc=0
