@@ -89,10 +89,10 @@ def opt():
     
     q or Q   -       Quit
                       \u001b[0m""")
-                elif option == "":
-                    pass
-                else:
-                    print("Ooops!,  '{}' Not Found.Try '?'  ".format(option))
+            elif option == "":
+                pass
+            else:
+                print("Ooops!,  '{}' Not Found.Try '?'  ".format(option))
     except:
         pass
 def ques():    
@@ -202,7 +202,7 @@ def ques():
         p=input(" [*] MOTHER'S NICK NAME => ")
         q=input(" [*] MOTHER'S FEVETOR THING => ")
         r=input(" [*] MOTHER'S PHONE NUMBER => ")
-        child=input(u"\u001b[36;1m [\u001m[31;1m!\u001b[36;1m] Bind About Victom's Child ? \u001b[0m")
+        child=input(u"\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Bind About Victom's Child ? \u001b[0m")
         if child == 'y':
             print()
             print(u"\u001b[32;1m [C] VICTOM'S CHILD \u001b[31;1m")
