@@ -265,37 +265,77 @@ def ques():
             eee='%'
         #############################################################
         count=0
+        lisc=0
+        Lisc=0
         fname=open(fname,'a')
         for n in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
             for i in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
-                count+=1
-                C=str(count)
-                Z=n+i
-                fname.write(Z)
-                fname.write('\n')
-                if uc == 'y':
-                    ZZZ=Z.capitalize()
-                    ZZ=Z.upper()
-                    fname.write(ZZ)
+                for I in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
+                    count+=1
+                    C=str(count)
+                    Z=n+i
+                    Tr=n+i+I
+                    Tr2=n.capitalize()+i.capitalize()
+                    Tr3=n.capitalize()+i.capitalize()+I.capitalize()
+                    Zr=n.capitalize()+i.capitalize()
+                    Zr2=n+i.capitalize()
+                    fname.write(i)
+                    fname.write("\n")
+                    fname.write(Z)
                     fname.write('\n')
-                    fname.write(ZZZ)
-                    fname.write('\n')
-                if nm == y:
-                    N=n+C
-                    NN=i+C
-                    NNN=n+i+C
-                    fname.write(N)
-                    fname.write('\n')
-                    fname.write(NN)
-                    fname.write('\n')
-                    fname.write(NNN)
-                    fname.write('\n')
-
+                    fname.write(Tr)
+                    fname.write("\n")
+                    if uc == 'y':
+                        ZZZZZ=Tr.upper()
+                        ZZZZ=Tr.capitalize()
+                        ZZZ=Z.capitalize()
+                        ZZ=Z.upper()
+                        fname.write(ZZ)
+                        fname.write('\n')
+                        fname.write(ZZZ)
+                        fname.write('\n')
+                        fname.write(ZZZZ)
+                        fname.write('\n')
+                        fname.write(ZZZZZ)
+                        fname.write('\n')
+                        fname.write(Tr2)
+                        fname.write('\n')
+                        fname.write(Tr3)
+                        fname.write('\n')
+                        fname.write(i.capitalize())
+                        fname.write('\n')
+                        fname.write(Zr)
+                        fname.write('\n')
+                        fname.write(Zr2)
+                        fname.write('\n')
+                    if nm == y:
+                        N=n+C
+                        NN=i+C
+                        NNN=n+i+C
+                        NNNN=Tr+C
+                        fname.write(N)
+                        fname.write('\n')
+                        fname.write(NN)
+                        fname.write('\n')
+                        fname.write(NNN)
+                        fname.write('\n')
+                        fname.write(NNNN)
+                        fname.write('\n')
+                    lis=["↑","↓","•"]
+                    lis2=["_","     ","__","        ","___","      ","_____","     ","    "]
+                    ran=random.choice(lis)
+                    print(u"\u001b[36;1m ",ran," \u001b[32;1mGenerating\u001b[0m {}            ".format(lis2[lisc])+"\r",end="" )
+                    Lisc+=1
+                    if Lisc == 1000:
+                        Lisc = 0
+                        if lisc == 8:
+                            lisc=0
+                        else:
+                            lisc+=1
         fname.close()
-        print()
-        print(u'\u001b[32;1m [*] SUCESSFULLY GENERATED')
+        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] SUCESSFULLY GENERATED                                  ')
         T()
-        print(u'\u001b[33;1m [*] FILE NAME => ',fn)
+        print(u'\u001b[33;1m [\u001b[31;1m*\u001b[32;1m] FILE NAME => ',fn)
         T()
         print(u'\u001b[0m')
     except:
