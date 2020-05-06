@@ -49,23 +49,21 @@ def opt():
                 upass()
             elif option == "q" or option == "Q":
                 exit()
-            else:
-                pass   #option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
-            if option == "ls":
+            elif option == "ls":
                 print(u"\u001b[0m----------------------------------------")
                 try:
                     os.system("ls -1sh")
                 except:
                     os.system("dir")
                 print(u"\u001b[0m----------------------------------------")
-            if option == "pwd":
+            elif option == "pwd":
                 print(u"\u001b[0m----------------------------------------")
                 try:
                     os.system("pwd")
                 except:
                     print("Sorry only in linux")
                 print(u"\u001b[0m----------------------------------------")
-            if option == "clear":
+            elif option == "clear":
                 print(u"\u001b[0m----------------------------------------")
                 try:
                     os.system("clear")
@@ -73,26 +71,32 @@ def opt():
                     print(u"\u001b[0m----------------------------------------")
                     print("Sorry only in linux")
                     print(u"\u001b[0m----------------------------------------")
-            if option == "?":
+            elif option == "?":
                 print(u"""\u001b[32;1m                            
- \u001b[32;4;1mTool\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+\u001b[32;4;1mTool\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
 
     1        -       Question type wordlist generator(mini interview ) :)
     2        -       Generate all possiblityes of leter given by user
     ?        -       This banner
- \u001b[32;4;1mSystem\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+
+\u001b[32;4;1mSystem\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
 
     ls       -       list directory contents
     pwd      -       present working directosy
     clear    -       Clear screen
- \u001b[32;4;1mExit\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
+
+\u001b[32;4;1mExit\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
     
     q or Q   -       Quit
                       \u001b[0m""")
+                elif option == "":
+                    pass
+                else:
+                    print("Ooops!,  '{}' Not Found.Try '?'  ".format(option))
     except:
         pass
 def ques():    
-    print(u'\u001b[32;1m===========================≠=≠================================================================')
+    print(u'\u001b[32;1m===========================≠=≠=============================================================')
     T()
     print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
@@ -105,9 +109,8 @@ def ques():
     T()
     print()
     T()
-
     try:
-        fname=input(u'\u001b[36;1m [F] FILE NAME => \u001b[0m')
+        fname=input(u'\u001b[36;1m [\u001b[31;1mF\u001b[36;1m] FILE NAME => \u001b[0m')
         if fname == "":
             fname="wordlist.txt"
         fn=fname
@@ -156,6 +159,9 @@ def ques():
         ccc=''
         ddd=''
         eee=''
+        usc=""
+        eck=""
+        space=""
         name=input(u'\u001b[31;1m [*] NAME => ')
         a=input(' [*] AGE => ')
         try:
@@ -196,10 +202,10 @@ def ques():
         p=input(" [*] MOTHER'S NICK NAME => ")
         q=input(" [*] MOTHER'S FEVETOR THING => ")
         r=input(" [*] MOTHER'S PHONE NUMBER => ")
-        child=input(u"\u001b[36;1m [*] BIND ABOUT VICTOM'S CHILD (y|n) ? \u001b[0m")
+        child=input(u"\u001b[36;1m [\u001m[31;1m!\u001b[36;1m] Bind About Victom's Child ? \u001b[0m")
         if child == 'y':
             print()
-            print(u"\u001b[32;1m [≥] VICTOM'S CHILD \u001b[31;1m")
+            print(u"\u001b[32;1m [C] VICTOM'S CHILD \u001b[31;1m")
             print()
             s=input('    [*] CHILD NAME => ')
             try:
@@ -220,10 +226,10 @@ def ques():
             except:
                 pass
             y=input('    [*] NICKNAME => ')
-        lpart=input(u"\u001b[36;1m [*] BIND ABOUT VICTOM'S LIFE PARTNER (y|n) ? \u001b[0m ")
+        lpart=input(u"\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Bind About Victom's Life Partener ? \u001b[0m ")
         if lpart == 'y':
             print()
-            print(u"\u001b[32;1m [≥] VICTOM'S LIFE PARTNER \u001b[31;1m")
+            print(u"\u001b[32;1m [P] VICTOM'S LIFE PARTNER \u001b[31;1m")
             print()
             z=input('    [*] NAME => ')
             try:
@@ -236,10 +242,10 @@ def ques():
             z2=input('    [*] NICK NAME => ')
             z3=input('    [*] PHONE => ')
             z4=input('    [*] FEVEROT => ')
-        frend=input(u"\u001b[36;1m [*] BIND ABOUT VICTOM'S FRIEND (Y|N) ? \u001b[0m ")
+        frend=input(u"\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Bind About Victom's Friend ? \u001b[0m ")
         if frend == 'y':
             print()
-            print(u"\u001b[32;1m [≥] VICTOME'S FRIEND\u001b[31;1m")
+            print(u"\u001b[32;1m [F] VICTOME'S FRIEND\u001b[31;1m")
             print()
             z5=input('    [*] NAME => ')
             try:
@@ -254,23 +260,28 @@ def ques():
             z9=input('    [*] PHONE => ')
 
 
-        uc=input(u'\u001b[36;1m [*] UPPER CASE COMITE (Y|N) ? \u001b[0m')
-        nm=input(u'\u001b[36;1m [*] END WITH NUMBER (Y|N) ? \u001b[0m')
-        sc=input(u'\u001b[36;1m [*] SPECIAL CHARACTOR COMIT (Y|N)? ')
+        uc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Upper Case ? \u001b[0m')
+        nm=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Number ? \u001b[0m')
+        sc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Special Charectors ? \u001b[0m')
+        Space=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Include Space ? \u001b[0m')
+        if Space == "y":
+            space=" "
         if sc == 'y':
             aaa='@'
             bbb='*'
             ccc='#'
             ddd='$'
             eee='%'
+            usc='_'
+            eck='!'
         #############################################################
         count=0
         lisc=0
         Lisc=0
         fname=open(fname,'a')
-        for n in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
-            for i in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
-                for I in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee:
+        for n in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
+            for i in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
+                for I in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
                     if n != "" and i != "" and I != "":
                         count+=1
                         C=str(count)
@@ -322,22 +333,22 @@ def ques():
                             fname.write('\n')
                             fname.write(NNNN)
                             fname.write('\n')
-                        lis=["↑","↓","•"]
-                        lis2=[".","     ","..","        ","...","      ",".....","     ","    "]
-                        ran=random.choice(lis)
-                        if Lisc == 4000:
-                            print(u"\u001b[36;1m ",ran," \u001b[32;1mGenerating\u001b[0m {}            ".format(lis2[lisc])+"\r",end="" )
-                            Lisc = 0
-                            if lisc == 8:
-                                lisc=0
-                            else:
-                                lisc+=1
+                    lis=["↑","↓","•"]
+                    lis2=[".","     ","..","        ","...","      ",".....","     ","    "]
+                    ran=random.choice(lis)
+                    if Lisc == 6000:
+                        print(u"\u001b[36;1m ",ran," \u001b[32;1mGenerating\u001b[0m {}            ".format(lis2[lisc])+"\r",end="" )
+                        Lisc = 0
+                        if lisc == 8:
+                            lisc=0
                         else:
-                            Lisc+=1
+                            lisc+=1
+                    else:
+                        Lisc+=1
         fname.close()
-        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] SUCESSFULLY GENERATED                                  ')
+        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] Successfully Completed                                         ')
         T()
-        print(u'\u001b[33;1m [\u001b[31;1m*\u001b[32;1m] FILE NAME => ',fn)
+        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] FILE NAME : \u001b[33;4;1m{}\u001b[0m '.format(fn))
         T()
         print(u'\u001b[0m')
     except:
@@ -400,7 +411,7 @@ def upass():
             print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : \u001b[33;4;1m{}\u001b[0m        '.format(line))
         print(u"\u001b[0m")
     except:
-        print(u'\u001b[31;1m                  ******* \u001b[0m')
+        print(u'\u001b[31;1m                  *******                   \u001b[0m')
         print(sys.exc_info())
         print(u"\u001b[0m")        
 opt()
