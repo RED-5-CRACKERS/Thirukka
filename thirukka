@@ -277,6 +277,9 @@ def ques():
         count=0
         lisc=0
         Lisc=0
+        zoo1=0
+        zoo2=0
+        zoo3=0
         fname=open(fname,'a')
         for n in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
             for i in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
@@ -296,6 +299,7 @@ def ques():
                         fname.write('\n')
                         fname.write(Tr)
                         fname.write("\n")
+                        zoo1+=1
                         if uc == 'y':
                             ZZZZZ=Tr.upper()
                             ZZZZ=Tr.capitalize()
@@ -319,6 +323,7 @@ def ques():
                             fname.write('\n')
                             fname.write(Zr2)
                             fname.write('\n')
+                            zoo2+=1
                         if nm == "y":
                             N=n+C
                             NN=i+C
@@ -332,6 +337,7 @@ def ques():
                             fname.write('\n')
                             fname.write(NNNN)
                             fname.write('\n')
+                            zoo3+=1
                     lis=["↑","↓","•"]
                     lis2=[".","     ","..","        ","...","      ",".....","     ","    "]
                     ran=random.choice(lis)
@@ -347,6 +353,17 @@ def ques():
         fname.close()
         print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] Successfully Completed                                         ')
         T()
+        zoo1*=3
+        zoo2*=8
+        zoo3*=4
+        line=zoo1+zoo2+zoo3
+        lis=[ff,str(line)]
+        print(u"\u001b[32;1m+------------------------------+-------------------------------+")
+        print(u"| Name of the wordlist         | Total Number of Lines Added   |")
+        print(u"+------------------------------+-------------------------------+")
+        print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
+                lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
+        print(u"+------------------------------+-------------------------------+\u001b[0m")
         print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] FILE NAME : \u001b[33;4;1m{}\u001b[0m '.format(fn))
         T()
         print(u'\u001b[0m')
@@ -403,12 +420,17 @@ def upass():
                     fc+=1
                 sys.stdout.flush()
         f.close()
-        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] File name : \u001b[33;4;1m{}\u001b[0m             '.format(ff))
-        if up == 'y' or up == 'Y': 
-            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : \u001b[33;4;1m{}\u001b[0m        '.format(line*3))
-        else:
-            print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] NO.OF.Lines : \u001b[33;4;1m{}\u001b[0m        '.format(line))
-        print(u"\u001b[0m")
+        if up == "y" or up == "Y" or up == "yes":
+            line*=3
+        lis=[ff,str(line)]
+        print()
+        print(u"\u001b[32;1m+------------------------------+-------------------------------+")
+        print(u"| Name of the wordlist         | Total Number of Lines Added   |")
+        print(u"+------------------------------+-------------------------------+")
+        print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
+                lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
+        print(u"+------------------------------+-------------------------------+\u001b[0m")
+    
     except:
         print(u'\u001b[31;1m                  *******                   \u001b[0m')
         print(sys.exc_info())
