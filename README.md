@@ -8,8 +8,8 @@
 
 ### _INSTLATION_
 ***
->  _```git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && pwd && echo && ls ```_
-> ###  (COPY AND PAST) ☝️😁
+> _```git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && pwd && echo && ls ```_
+ ###  (COPY AND PAST) ☝️😁
 ***
 
 
