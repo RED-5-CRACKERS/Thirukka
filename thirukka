@@ -364,7 +364,7 @@ def ques():
         print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
                 lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
         print(u"+------------------------------+-------------------------------+\u001b[0m")
-        print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] FILE NAME : \u001b[33;4;1m{}\u001b[0m '.format(fn))
+        #print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] FILE NAME : \u001b[33;4;1m{}\u001b[0m '.format(fn))
         T()
         print(u'\u001b[0m')
     except:
