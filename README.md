@@ -11,11 +11,17 @@
 > _```git clone https://github.com/RED-5-CRACKERS/Thirukka.git && cd Thirukka && chmod +x setup && ./setup && pwd && echo && ls ```_
  ###  (COPY AND PAST) ☝️😁
 ***
-
-
+or
+***
+> _```user@localhost:~$ cd Thirukka```_
+> _```user@localhost:~/Thirukka$ chmod +x setup```_
+> _```user@localhost:~/Thirukka$ ./setup```_
+***
 
 ### _RUN:_
-> _``` ./thirukka ```_
+> _```user@localhost:~$ thirukka ```_
+***
+> _```user@localhost:~/Thirukka$ ./thirukka ```_
 ***
 <img src=".thirukka.jpg" />
 
