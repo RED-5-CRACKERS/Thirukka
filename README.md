@@ -13,6 +13,8 @@
 ***
 or
 ***
+> _```user@localhost:~$ git clone https://github.com/RED-5-CRACKERS/Thirukka.git```_
+***
 > _```user@localhost:~$ cd Thirukka```_
 ***
 > _```user@localhost:~/Thirukka$ chmod +x setup```_
