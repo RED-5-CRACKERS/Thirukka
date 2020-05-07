@@ -354,10 +354,10 @@ def ques():
         print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] Successfully Completed                                         ')
         T()
         zoo1*=3
-        zoo2*=8
+        zoo2*=9
         zoo3*=4
         line=zoo1+zoo2+zoo3
-        lis=[ff,str(line)]
+        lis=[fn,str(line)]
         print(u"\u001b[32;1m+------------------------------+-------------------------------+")
         print(u"| Name of the wordlist         | Total Number of Lines Added   |")
         print(u"+------------------------------+-------------------------------+")
