@@ -14,12 +14,17 @@
 or
 ***
 > _```user@localhost:~$ cd Thirukka```_
+***
 > _```user@localhost:~/Thirukka$ chmod +x setup```_
+***
 > _```user@localhost:~/Thirukka$ ./setup```_
 ***
 
 ### _RUN:_
+***
 > _```user@localhost:~$ thirukka ```_
+***
+or
 ***
 > _```user@localhost:~/Thirukka$ ./thirukka ```_
 ***
