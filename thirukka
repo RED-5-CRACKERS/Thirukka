@@ -72,23 +72,21 @@ def opt():
                     print("Sorry only in linux")
                     print(u"\u001b[0m----------------------------------------")
             elif option == "?":
-                print(u"""\u001b[32;1m                            
-\u001b[32;4;1mTool\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
-
-    1        -       Question type wordlist generator(mini interview ) :)
-    2        -       Generate all possiblityes of leter given by user
-    ?        -       This banner
-
-\u001b[32;4;1mSystem\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
-
-    ls       -       list directory contents
-    pwd      -       present working directosy
-    clear    -       Clear screen
-
-\u001b[32;4;1mExit\u001b[0m \u001b[32;4;1mcommand\u001b[0m:\u001b[32;1m
-    
-    q or Q   -       Quit
-                      \u001b[0m""")
+                print(u"""\u001b[32;1m+------------------------------------------------------------+
+|                           HELP                             |
++--------------+---------+-----------------------------------+
+|    Title     | Command |          Discryption              |
++--------------+---------+-----------------------------------+
+|              |    1    | Interview Type wordlist generater |
+| Tool command |    2    | Charectors all passiblities       |
+|              |    ?    | This banner                       |
++--------------+---------+-----------------------------------+
+|              |   ls    | List directory contents           |
+|System command|   pwd   | Print current working directory   |
+|              |  clear  | Clear Terminal                    |
++--------------+---------+-----------------------------------+
+| Exit command |  Q or q | Quit                              |
++--------------+---------+-----------------------------------+\u001b[0m """)
             elif option == "":
                 pass
             else:
