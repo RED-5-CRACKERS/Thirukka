@@ -30,6 +30,7 @@ or
 ##
 > _```user@localhost:~/Thirukka$ ./thirukka ```_
 ***
+
 <img src=".thirukka.jpg" />
 
-***
+
