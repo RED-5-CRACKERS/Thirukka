@@ -114,7 +114,7 @@ def ques():
     T()
     print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
-    print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] TRY TO FILL ALL ')
+    print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] else ignored ')
     T()
     print()
     T()
