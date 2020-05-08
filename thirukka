@@ -276,7 +276,7 @@ def ques():
         nm=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Number ? \u001b[0m')
         sc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Special Charectors ? \u001b[0m')
         reverse=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Append Reverse of letter ? \u001b[0m')
-        if Space == "y":
+        if space == "y":
             space=""
         if sc == 'y':
             aaa='@'
