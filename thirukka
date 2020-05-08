@@ -447,7 +447,7 @@ def upass():
         if up == "y" or up == "Y" or up == "yes":
             line*=3
         lis=[ff,str(line)]
-        print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Completed
+        print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Completed')
         print(u"\u001b[32;1m+------------------------------+-------------------------------+")
         print(u"| Name of the wordlist         | Total Number of Lines Added   |")
         print(u"+------------------------------+-------------------------------+")
@@ -456,7 +456,7 @@ def upass():
         print(u"+------------------------------+-------------------------------+\u001b[0m")
     
     except:
-        print(u'\u001b[31;1m                  *******                   \u001b[0m')
+        print(u'\u001b[31;1m                  *******                            \u001b[0m')
         print(sys.exc_info())
         print(u"\u001b[0m")        
 opt()
