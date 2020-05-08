@@ -8,6 +8,22 @@ import random
 import itertools
 def T():
     time.sleep(0.04)
+print(u"""\u001b[32;1m
+─────────────────────────────────────────────────────────────────────────""")
+T()
+print("  ─────────────╔════╗╔╗─╔╗╔══╗╔═══╗╔╗─╔╗╔╗╔═╗╔╗╔═╗╔═══╗────────────────")
+T()
+print("     ──────────║╔╗╔╗║║║─║║╚╣─╝║╔═╗║║║─║║║║║╔╝║║║╔╝║╔═╗║─────────────")
+T()
+print("       ────────╚╝║║╚╝║╚═╝║─║║─║╚═╝║║║─║║║╚╝╝─║╚╝╝─║║─║║──────────")
+T()
+print("          ───────║║──║╔═╗║─║║─║╔╗╔╝║║─║║║╔╗║─║╔╗║─║╚═╝║───────")
+T()
+print("             ────║║──║║─║║╔╣─╗║║║╚╗║╚═╝║║║║╚╗║║║╚╗║╔═╗║────")
+T()
+print("                ─╚╝──╚╝─╚╝╚══╝╚╝╚═╝╚═══╝╚╝╚═╝╚╝╚═╝╚╝─╚╝─ ")
+T()
+'''
 T()
 print('\u001b[32;1m')
 print('===========================≠=≠======================================================================')
@@ -32,6 +48,7 @@ print(u'\u001b[32;1m     888     888    888 8888888 888   T88b  "Y88888P"  888  
 T()
 print(u'\u001b[33;1m                                                                                                 ')
 T()
+'''
 def opt():
     print(u"""
 \u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Question type wordlist generator
@@ -39,7 +56,6 @@ def opt():
 \u001b[32;1m [\u001b[31;1mQ\u001b[32;1m]. Quit
 \u001b[32;1m [\u001b[31;1m?\u001b[32;1m]. Help
             """)
-
     try:
         while True:
             option=input(u"\u001b[32;4;1mThirukka\u001b[0m> ")
@@ -72,21 +88,21 @@ def opt():
                     print("Sorry only in linux")
                     print(u"\u001b[0m----------------------------------------")
             elif option == "?":
-                print(u"""\u001b[32;1m+------------------------------------------------------------+
-|                           HELP                             |
-+--------------+---------+-----------------------------------+
-|    Title     | Command |          Discryption              |
-+--------------+---------+-----------------------------------+
-|              |    1    | Interview Type wordlist generater |
-| Tool command |    2    | Charectors all passiblities       |
-|              |    ?    | This banner                       |
-+--------------+---------+-----------------------------------+
-|              |   ls    | List directory contents           |
-|System command|   pwd   | Print current working directory   |
-|              |  clear  | Clear Terminal                    |
-+--------------+---------+-----------------------------------+
-| Exit command |  Q or q | Quit                              |
-+--------------+---------+-----------------------------------+\u001b[0m """)
+                print(u"""\u001b[32;1m+--------------------------------------------------------------+
+|                            HELP                              |
++--------------+---------+-------------------------------------+
+|    Title     | Command |          Discryption                |
++--------------+---------+-------------------------------------+
+|              |    1    | Interview Type wordlist generater   |
+| Tool command |    2    | Charectors all passiblities         |
+|              |    ?    | This banner                         |
++--------------+---------+-------------------------------------+
+|              |   ls    | List directory contents             |
+|System command|   pwd   | Print current working directory     |
+|              |  clear  | Clear Terminal                      |
++--------------+---------+-------------------------------------+
+| Exit command |  Q or q | Quit                                |
++--------------+---------+-------------------------------------+\u001b[0m """)
             elif option == "":
                 pass
             else:
@@ -94,13 +110,12 @@ def opt():
     except:
         pass
 def ques():    
-    print(u'\u001b[32;1m===========================≠=≠=============================================================')
+    print()
     T()
     print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] DOB MUST BE 8 LETTERS =>\u001b[32;1m 08062000 \u001b[32;1m.Not like \u001b[31;1m 08-06-2000')
     T()
     print(u'\u001b[32;1m [\u001b[31;1m*\u001b[32;1m] TRY TO FILL ALL ')
     T()
-    print('===========================≠=≠====================================================================')
     print()
     T()
     print(u'\u001b[32;1m [\u001b[33;1m!\u001b[32;1m] I WANT TO KNOW ABOUT YOUR VICTOM. \u001b[0m')
@@ -260,7 +275,7 @@ def ques():
         uc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Upper Case ? \u001b[0m')
         nm=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Number ? \u001b[0m')
         sc=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Join Special Charectors ? \u001b[0m')
-        Space=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Include Space ? \u001b[0m')
+        reverse=input(u'\u001b[36;1m [\u001b[31;1m!\u001b[36;1m] Append Reverse of letter ? \u001b[0m')
         if Space == "y":
             space=""
         if sc == 'y':
@@ -278,6 +293,7 @@ def ques():
         zoo1=0
         zoo2=0
         zoo3=0
+        zoo4=0
         fname=open(fname,'a')
         for n in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
             for i in name,a,m1,m2,m3,c,d,e,f,g,h,i,j1,j2,j3,k,l,m,n,o1,o2,o3,p,q,r,s,t1,t2,t3,u,v,w,x1,x2,x3,y,z,z2,z3,z4,z5,z7,z8,z9,z11,z22,z33,z61,z62,z63,aaa,bbb,ccc,ddd,eee,usc,eck,space:
@@ -322,6 +338,16 @@ def ques():
                             fname.write(Zr2)
                             fname.write('\n')
                             zoo2+=1
+                        Rev=""
+                        Revn=""
+                        if reverse == "y":
+                            Lrev=len(i)
+                            for Rev in range(1,Lrev+1):
+                                Rev=int("-"+str(Rev))
+                                Revn+=i[Rev]
+                            fname.write(Revn)
+                            fname.write("\n")
+                            zoo4+=1
                         if nm == "y":
                             N=n+C
                             NN=i+C
@@ -354,7 +380,7 @@ def ques():
         zoo1*=3
         zoo2*=9
         zoo3*=4
-        line=zoo1+zoo2+zoo3
+        line=zoo1+zoo2+zoo3+zoo4
         lis=[fn,str(line)]
         print(u"\u001b[32;1m+------------------------------+-------------------------------+")
         print(u"| Name of the wordlist         | Total Number of Lines Added   |")
