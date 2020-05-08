@@ -421,10 +421,22 @@ def upass():
         if f == '':
             f="wordlist.txt"
         ff=f
-        f = open(f, 'w')
+        f = open(f, 'a')
         fc=0
+        chars=list(chars)
+        chars2=set()
+        uniq=[]
+        for xuniq in chars:
+            if xuniq not in chars2:
+                uniq.append(xuniq)
+                chars2.add(xuniq)
+        chars2=list(chars2)
+        XX=""
+        for xuniq in range(0,len(chars2)):
+            XX+=chars2[xuniq]
+        dup=len(chars)-len(XX)
         for n in range(min_,max_ + 1):
-            for i in itertools.product(chars, repeat=n):
+            for i in itertools.product(XX, repeat=n):
                 line+=1
                 num=line
                 a = ''.join(i)
@@ -446,17 +458,17 @@ def upass():
         f.close()
         if up == "y" or up == "Y" or up == "yes":
             line*=3
-        lis=[ff,str(line)]
-        print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Completed')
-        print(u"\u001b[32;1m+------------------------------+-------------------------------+")
-        print(u"| Name of the wordlist         | Total Number of Lines Added   |")
-        print(u"+------------------------------+-------------------------------+")
-        print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
-                lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
-        print(u"+------------------------------+-------------------------------+\u001b[0m")
-    
+        lis=[ff,str(line),str(dup)]
+        print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Completed                          ')
+        print(u"\u001b[32;1m+-----------------------+---------------------------+-----------------+")
+        print(u"| Name of the wordlist  |Total Number of Lines Added|Ignored duplicate|")
+        print(u"+-----------------------+---------------------------+-----------------+")
+        print(u"| \u001b[37;1m",lis[0]," "*(19-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
+                lis[1]," "*(23-len(lis[1])),"\u001b[32;1m|\u001b[37;1m",
+                " ",lis[2]," "*(12-len(lis[2])),"\u001b[32;1m|")
+        print(u"+-----------------------+---------------------------+-----------------+\u001b[0m")
     except:
-        print(u'\u001b[31;1m                  *******                            \u001b[0m')
+        print(u'\u001b[31;1m                  *******                                  \u001b[0m')
         print(sys.exc_info())
         print(u"\u001b[0m")        
 opt()
