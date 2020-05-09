@@ -199,7 +199,7 @@ def ques():
     fname=input(u"File Name\u001b[0m: ")
     if fname == "":
         fname="wordlist.txt"
-    Procesd=input(u"\u001b[36;1m'ENTER' to Start..........")
+    Procesd=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/Enter_to_Generet\u001b[0m)> \u001b[36;1m')
     #CONFIG
     b[-1]=dob[0][:2]
     b[-2]=dob[0][2:4]
@@ -286,7 +286,6 @@ def ques():
     print(u"+------------------------------+-------------------------------+")
     print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
     print(u"+------------------------------+-------------------------------+\u001b[0m")   
-    print(u'\u001b[0m')
 def upass():
     try:
         line=0
@@ -294,15 +293,15 @@ def upass():
         min_=""
         max_=""
         while chars == "":
-            chars=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/charectors\u001b[0m)> \u001b[36;1m')
+            chars=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/charectors\u001b[0m)> \u001b[0m')
         while min_ == "":
             try:
-                min_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMIN\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[36;1m'))
+                min_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMIN\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[0m'))
             except:
                 pass
         while max_ == "":
             try:
-                max_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMAX\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[36;1m'))
+                max_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMAX\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[0m'))
             except:
                 pass
         if min_ > max_:
@@ -310,7 +309,7 @@ def upass():
             max_=""
             print(u'\u001b[31;1mMINIMUM VALUE MUTS BE SMALLER THEN MAXIMUM VALUE')
             upass()
-        up=input(u"\u001b[36;1mUppercase comitement ? ")
+        up=input(u"\u001b[33;1mUppercase comitement ? ")
         f=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/filename:wordlist.txt\u001b[0m)> \u001b[36;1m')
         if f == '':
             f="wordlist.txt"
