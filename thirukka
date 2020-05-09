@@ -278,18 +278,14 @@ def ques():
                             zc1+=1
             count+=1
     f.close()
-    print("Total lines in file: {}".format(zc1))
-        lis=[fname,str(zc1)]
-        print(u"\u001b[32;1m+------------------------------+-------------------------------+")
-        print(u"| Name of the wordlist         | Total Number of Lines Added   |")
-        print(u"+------------------------------+-------------------------------+")
-        print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
-                lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
-        print(u"+------------------------------+-------------------------------+\u001b[0m")
-        T()
-        print(u'\u001b[0m')
-    except:
-        print(sys.exc_info())
+    #print("Total lines in file: {}".format(zc1))
+    lis=[fname,str(zc1)]
+    print(u"\u001b[32;1m+------------------------------+-------------------------------+")
+    print(u"| Name of the wordlist         | Total Number of Lines Added   |")
+    print(u"+------------------------------+-------------------------------+")
+    print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
+    print(u"+------------------------------+-------------------------------+\u001b[0m")   
+    print(u'\u001b[0m')
 def upass():
     try:
         line=0
