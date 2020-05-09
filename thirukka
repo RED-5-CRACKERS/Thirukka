@@ -276,6 +276,7 @@ def ques():
                             f.write(Y+Sc)
                             f.write("\n")
                             zc1+=1
+                sc=""
             count+=1
     f.close()
     #print("Total lines in file: {}".format(zc1))
