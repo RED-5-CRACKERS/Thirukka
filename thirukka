@@ -194,7 +194,7 @@ def ques():
         s[11]="?"
     num=input(u"\u001b[33;1mEnd with numbers ? \u001b[0m")
     print(u"\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Eg: MadhavaMadhavaMadhava")
-    three=input(u"\u001b[33;1mDo you to join all the word three times ? \u001b[0m")
+    three=input(u"\u001b[33;1mDo you want to bind trice of the info ? \u001b[0m")
     print(u"\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Default 'wordlist.txt'")
     fname=input(u"File Name\u001b[0m: ")
     if fname == "":
