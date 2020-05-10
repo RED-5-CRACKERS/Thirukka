@@ -288,6 +288,8 @@ def ques():
     print(u"+------------------------------+-------------------------------+\u001b[0m")   
 def upass():
     try:
+        zzz=["Generating...","gEnerating...","geNerating...","genErating...","geneRating...","generAting...","generaTing...","generatIng...","generatiNg...","generatinG...","generating_..","generating._.","generating.._"]
+        zz=itertools.cycle(zzz)
         line=0
         chars=""
         min_=""
@@ -341,9 +343,9 @@ def upass():
                 d=a
                 f.write("%s\n" % d)
                 if fc == 13532:
-                    lis=["↓","•","↑","↑","↑","↓","↑"]
+                    lis=["↓","↑","↑","↑","↓","↑"]
                     ran=random.choice(lis)
-                    print(u"\u001b[36;1m ",ran,"\u001b[32;4;1mGenerating\u001b[0m【\u001b[36;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
+                    print(u"\u001b[36;1m ",ran,"\u001b[32;1m,next(zz),\u001b[0m【\u001b[36;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
                     fc=0
                 else:
                     fc+=1
