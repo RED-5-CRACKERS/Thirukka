@@ -252,18 +252,21 @@ def ques():
                                     f.write("\n")
                                     f.write(i.capitalize()+n+m)
                                     f.write("\n")
-
                                     f.write(i+n.capitalize()+m)
                                     f.write("\n")
                                     f.write(i+n+m.capitalize())
                                     f.write("\n")
-                                    zc1+=3
+                                    zc1+=6
                     if upper == "y" or upper == "yes" or upper == "Y":
                         f.write(n+i.upper())
                         f.write("\n")
                         f.write(n.upper()+i)
                         f.write("\n")
-                        zc1+=2
+                        f.write(n+i.capitalize())
+                        f.write("\n")
+                        f.write(n.capitalize()+i)
+                        f.write("\n")
+                        zc1+=4
                     if num == "y" or num == "yes":
                         f.write(n+i+str(count))
                         f.write("\n")
