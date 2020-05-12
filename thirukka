@@ -250,6 +250,13 @@ def ques():
                                     f.write("\n")
                                     f.write(i.upper()+n+m)
                                     f.write("\n")
+                                    f.write(i.capitalize()+n+m)
+                                    f.write("\n")
+
+                                    f.write(i+n.capitalize()+m)
+                                    f.write("\n")
+                                    f.write(i+n+m.capitalize())
+                                    f.write("\n")
                                     zc1+=3
                     if upper == "y" or upper == "yes" or upper == "Y":
                         f.write(n+i.upper())
