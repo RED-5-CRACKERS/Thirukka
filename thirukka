@@ -276,9 +276,10 @@ def ques():
                 f.write("\n")
                 zc1+=1
             if num == "y" or num == "yes":
-                f.write(i+str(count))
-                f.write("\n")
-                zc1+=1
+                for cou in range(0,1000):
+                    f.write(i+str(cou))
+                    f.write("\n")
+                    zc1+=1
             if sc == "y" or sc =="yes":
                 for Sc in s:
                     for Y in b:
