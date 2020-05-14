@@ -256,7 +256,19 @@ def ques():
                                     f.write("\n")
                                     f.write(i+n+m.capitalize())
                                     f.write("\n")
-                                    zc1+=6
+                                    f.write(i.upper()+n.capitalize()+m)
+                                    f.write("\n")
+                                    f.write(i.capitalize()+n.upper()+m)
+                                    f.write("\n")
+                                    f.write(i+n.capitalize()+m.upper())
+                                    f.write("\n")
+                                    f.write(i+n.upper()+m.capitalize())
+                                    f.write("\n")
+                                    f.write(i.upper()+n.upper()+m.capitalize())
+                                    f.write("\n")
+                                    f.write(i.capitalize()+n.upper()+m.upper())
+                                    f.write("\n")
+                                    zc1+=12
                     if upper == "y" or upper == "yes" or upper == "Y":
                         f.write(n+i.upper())
                         f.write("\n")
@@ -266,17 +278,28 @@ def ques():
                         f.write("\n")
                         f.write(n.capitalize()+i)
                         f.write("\n")
-                        zc1+=4
-                    if num == "y" or num == "yes":
-                        f.write(n+i+str(count))
+                        f.write(n.upper()+i.capitalize())
                         f.write("\n")
-                        zc1+=1
+                        f.write(n.upper()+i.upper())
+                        f.write("\n")
+                        f.write(n.capitalize()+i.capitalize())
+                        f.write("\n")
+                        f.write(n.capitalize()+i.upper())
+                        f.write("\n")
+                        zc1+=8
+                    if num == "y" or num == "yes":
+                        for Num in range(0,200):
+                            f.write(n+i+str(Num))
+                            f.write("\n")
+                            zc1+=1
             if upper == "y" or upper == "yes" or upper == "Y":
                 f.write(i.upper())
                 f.write("\n")
-                zc1+=1
+                f.write(i.capitalize())
+                f.write("\n")
+                zc1+=2
             if num == "y" or num == "yes":
-                for cou in range(0,1000):
+                for cou in range(0,200):
                     f.write(i+str(cou))
                     f.write("\n")
                     zc1+=1
