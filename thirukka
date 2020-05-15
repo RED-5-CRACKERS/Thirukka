@@ -81,7 +81,7 @@ def opt():
                 try:
                     os.system("pwd")
                 except:
-                    print("Sorry only in linux")
+                    os.system("cwd")
                 print(u"\u001b[0m----------------------------------------")
             elif option == "clear":
                 print(u"\u001b[0m----------------------------------------")
@@ -89,7 +89,7 @@ def opt():
                     os.system("clear")
                 except:
                     print(u"\u001b[0m----------------------------------------")
-                    print("Sorry only in linux")
+                    os.system("cls")
                     print(u"\u001b[0m----------------------------------------")
             elif option == "?":
                 print(u"""\u001b[32;1m+--------------------------------------------------------------+
