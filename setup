@@ -75,7 +75,7 @@ function Main(){
 	fi
 	python3 -c "print(u'\u001b[33;1m')"
 	
-	sleep 2
+	sleep 0.1
 	
 	python3 -c "print(u'\u001b[0m')"
 	echo " [*] Rerun “./setup” while error occered"
