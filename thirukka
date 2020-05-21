@@ -189,63 +189,40 @@ def ques():
     for i in b:
         f=open(fname,"a")
         if i != "":
-            f.write(i)
-            f.write("\n")
+            f.write(i+"\n")
             zc1+=1
             for n in b:
                 if n != "":
-                    f.write(n+i)
-                    f.write("\n")
+                    f.write(n+i+"\n")
                     zc1+=1
                     for m in b:
                         if three == "y" or three == "yes" or three == "Y":
                             if m != "":
-                                f.write(i+n+m)
-                                f.write("\n")
+                                f.write(i+n+m+"\n")
                                 zc1+=1
                                 if upper == "y" or upper == "yes" or upper == "Y":
-                                    f.write(i+n+m.upper())
-                                    f.write("\n")
-                                    f.write(i+n.upper()+m)
-                                    f.write("\n")
-                                    f.write(i.upper()+n+m)
-                                    f.write("\n")
-                                    f.write(i.capitalize()+n+m)
-                                    f.write("\n")
-                                    f.write(i+n.capitalize()+m)
-                                    f.write("\n")
-                                    f.write(i+n+m.capitalize())
-                                    f.write("\n")
-                                    f.write(i.upper()+n.capitalize()+m)
-                                    f.write("\n")
-                                    f.write(i.capitalize()+n.upper()+m)
-                                    f.write("\n")
-                                    f.write(i+n.capitalize()+m.upper())
-                                    f.write("\n")
-                                    f.write(i+n.upper()+m.capitalize())
-                                    f.write("\n")
-                                    f.write(i.upper()+n.upper()+m.capitalize())
-                                    f.write("\n")
-                                    f.write(i.capitalize()+n.upper()+m.upper())
-                                    f.write("\n")
+                                    f.write(i+n+m.upper()+"\n")
+                                    f.write(i+n.upper()+m+"\n")
+                                    f.write(i.upper()+n+m+"\n")
+                                    f.write(i.capitalize()+n+m+"\n")
+                                    f.write(i+n.capitalize()+m+"\n")
+                                    f.write(i+n+m.capitalize()+"\n")
+                                    f.write(i.upper()+n.capitalize()+m+"\n")
+                                    f.write(i.capitalize()+n.upper()+m+"\n")
+                                    f.write(i+n.capitalize()+m.upper()+"\n")
+                                    f.write(i+n.upper()+m.capitalize()+"\n")
+                                    f.write(i.upper()+n.upper()+m.capitalize()+"\n")
+                                    f.write(i.capitalize()+n.upper()+m.upper()+"\n")
                                     zc1+=12
                     if upper == "y" or upper == "yes" or upper == "Y":
-                        f.write(n+i.upper())
-                        f.write("\n")
-                        f.write(n.upper()+i)
-                        f.write("\n")
-                        f.write(n+i.capitalize())
-                        f.write("\n")
-                        f.write(n.capitalize()+i)
-                        f.write("\n")
-                        f.write(n.upper()+i.capitalize())
-                        f.write("\n")
-                        f.write(n.upper()+i.upper())
-                        f.write("\n")
-                        f.write(n.capitalize()+i.capitalize())
-                        f.write("\n")
-                        f.write(n.capitalize()+i.upper())
-                        f.write("\n")
+                        f.write(n+i.upper()+"\n")
+                        f.write(n.upper()+i+"\n")
+                        f.write(n+i.capitalize()+"\n")
+                        f.write(n.capitalize()+i+"\n")
+                        f.write(n.upper()+i.capitalize()+"\n")
+                        f.write(n.upper()+i.upper()+"\n")
+                        f.write(n.capitalize()+i.capitalize()+"\n")
+                        f.write(n.capitalize()+i.upper()+"\n")
                         zc1+=8
                     if num == "y" or num == "yes":
                         for Num in range(0,200):
