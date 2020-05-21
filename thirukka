@@ -88,9 +88,9 @@ def opt():
     except:
         pass
 def ques():
-    b=["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
+    b=["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
     dob=["","","","","","","","","","","","","","","",""]
-    s=["","","","","","","","","","","","","","","","",""]
+    s=["?","!","@","#","$","_","&","-","+","*","∆","×","|","~","•","°","="]
     c=42
     count=0
     b[0]=input(u"\u001b[32;1mVictom's Name\u001b[0m: ")
@@ -152,20 +152,6 @@ def ques():
                 break
     upper=input(u"\u001b[33;1mDo you want to add UPPER case ? \u001b[0m")
     sc=input(u"\u001b[33;1mDo you want to add Specel cherectors ? \u001b[0m")
-    if sc == "y" or sc == "yes":
-        s[0]="!"
-        s[1]="@"
-        s[2]="#"
-        s[3]="$"
-        s[4]="%"
-        s[12]="^"
-        s[5]="&"
-        s[6]="*"
-        s[7]="-"
-        s[8]="_"
-        s[9]="+"
-        s[10]="="
-        s[11]="?"
     num=input(u"\u001b[33;1mEnd with numbers ? \u001b[0m")
     print(u"\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Eg: MadhavaMadhavaMadhava")
     three=input(u"\u001b[33;1mDo you want to bind trice of the info ? \u001b[0m")
@@ -263,31 +249,30 @@ def ques():
                         zc1+=8
                     if num == "y" or num == "yes":
                         for Num in range(0,200):
-                            f.write(n+i+str(Num))
-                            f.write("\n")
+                            f.write(n+i+str(Num)+"\n")
                             zc1+=1
             if upper == "y" or upper == "yes" or upper == "Y":
-                f.write(i.upper())
-                f.write("\n")
-                f.write(i.capitalize())
-                f.write("\n")
+                f.write(i.upper()+"\n")
+                f.write(i.capitalize()+"\n")
                 zc1+=2
             if num == "y" or num == "yes":
                 for cou in range(0,200):
-                    f.write(i+str(cou))
-                    f.write("\n")
+                    f.write(i+str(cou)+"\n")
                     zc1+=1
             if sc == "y" or sc =="yes":
                 for Sc in s:
                     for Y in b:
                         if Sc != "" and Y != "":
-                            f.write(Y+Sc)
-                            f.write("\n")
-                            zc1+=1
+                            f.write(Y+Sc+"\n")
+                            f.write(Sc+Y+"\n")
+                            if upper == "y" or upper == "yes":
+                                f.write(Sc+Y.capitalize()+"\n")
+                                f.write(Y.capitalize()+Sc+"\n")
+                                zc1+=2
+                            zc1+=2
                 sc=""
             count+=1
     f.close()
-    #print("Total lines in file: {}".format(zc1))
     lis=[fname,str(zc1)]
     print(u"\u001b[32;1m+------------------------------+-------------------------------+")
     print(u"| Name of the wordlist         | Total Number of Lines Added   |")
