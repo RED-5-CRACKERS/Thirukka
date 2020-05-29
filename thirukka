@@ -150,11 +150,12 @@ def ques():
         while True:
             a=input(u"\u001b[31;1m"+str(I)+".Additional info\u001b[0m: ")
             if a != "q!":
-                b[c]=a
-                c+=1
+                b.append(a)
                 I+=1
             else:
                 break
+        for i in range(25):
+            b.append("")
     upper=input(u"\u001b[33;1mDo you want to add UPPER case ? \u001b[0m")
     sc=input(u"\u001b[33;1mDo you want to add Specel cherectors ? \u001b[0m")
     num=input(u"\u001b[33;1mEnd with numbers ? \u001b[0m")
