@@ -110,7 +110,7 @@ def ques():
     b[8]=input(u"\u001b[32;1mCity\u001b[0m: ")
     print(u"\u001b[32;1m ---  Home Info  --- \u001b[0m")
     b[9]=input(u"\u001b[32;1mFather Name\u001b[0m: ")
-    dob[1]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")    
+    dob[1]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
     b[10]=input(u"\u001b[32;1mFather's Feverot thing\u001b[0m: ")
     b[11]=input(u"\u001b[32;1mMother Name\u001b[0m: ")
     dob[2]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
@@ -146,13 +146,15 @@ def ques():
     Freetype=input(u"\u001b[33;1mDo you want to add some more info ? \u001b[0m")
     if Freetype == "y" or Freetype == "yes":
         I=1
-        print(u"\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] After added, '\u001b[31;1mq!\u001b[32;1m' to come back")
+        print(u"\u001b[32;1m   ---  Additional Info  --- \u001b[0m")
+        print(u"\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] After added, '\u001b[33;1mq!\u001b[32;1m' to come back")
         while True:
             a=input(u"\u001b[31;1m"+str(I)+".Additional info\u001b[0m: ")
             if a != "q!":
                 b.append(a)
                 I+=1
             else:
+                print("\u001b[32;1m <<Step back>>\u001b[0m")
                 break
         for i in range(25):
             b.append("")
