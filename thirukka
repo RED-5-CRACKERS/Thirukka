@@ -98,10 +98,29 @@ def ques():
     s=["?","!","@","#","$","_","&","-","+","*","∆","×","|","~","•","°","="]
     c=42
     count=0
+    def DOB(_date_):
+        while True:
+            Pass=True
+            dob[_date_]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+            if dob[_date_]=="":
+                return dob[_date_]
+            else:
+                if len(dob[_date_])==8:
+                    try:
+                        if int(dob[_date_][:2])>31:
+                            print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mInvalied Date\u001b[0m: \u001b[33;1m "+dob[_date_][:2]+"\u001b[0m\u001b[2;1m/MM/YYYY\u001b[0m")
+                        elif int(dob[_date_][2:4])>12:
+                            print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mInvalied Month\u001b[0m: \u001b[0m\u001b[2;1mDD/\u001b[0m\u001b[33;1m"+dob[_date_][2:4]+"\u001b[0m\u001b[2;1m/YYYY\u001b[0m")
+                        else:
+                            return dob[_date_]
+                    except:
+                        print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mDob must be an Integer")
+                else:
+                    print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mDob must be 8  \u001b[33;1mEg\u001b[0m: \u001b[32;1m12082001 ")
     b[0]=input(u"\u001b[32;1mVictom's Name\u001b[0m: ")
     b[1]=input(u"\u001b[32;1mShure Name\u001b[0m: ")
     b[2]=input(u"\u001b[32;1mPet Name\u001b[0m: ")
-    dob[0]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+    dob[0]=DOB(0)
     b[3]=input(u"\u001b[32;1mEnemy Name\u001b[0m: ")
     b[4]=input(u"\u001b[32;1mFeverot star\u001b[0m: ")
     b[5]=input(u"\u001b[32;1mFeverot Game\u001b[0m: ")
@@ -110,20 +129,20 @@ def ques():
     b[8]=input(u"\u001b[32;1mCity\u001b[0m: ")
     print(u"\u001b[32;1m ---  Home Info  --- \u001b[0m")
     b[9]=input(u"\u001b[32;1mFather Name\u001b[0m: ")
-    dob[1]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+    dob[1]=DOB(1)
     b[10]=input(u"\u001b[32;1mFather's Feverot thing\u001b[0m: ")
     b[11]=input(u"\u001b[32;1mMother Name\u001b[0m: ")
-    dob[2]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+    dob[2]=DOB(2)
     b[12]=input(u"\u001b[32;1mMother's Feverot thing\u001b[0m: ")
     b[13]=input(u"\u001b[32;1mBrother's Name\u001b[0m: ")
-    dob[3]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+    dob[3]=DOB(3)
     b[14]=input(u"\u001b[32;1mSister's Name\u001b[0m: ")
-    dob[4]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+    dob[4]=DOB(4)
     friend=input(u"\u001b[33;1mDo you want to bind about his/her Friend ? \u001b[0m")
     if friend == "y" or friend == "yes":
         b[15]=input(u"\u001b[32;1mFriend's Name\u001b[0m: ")
         b[16]=input(u"\u001b[32;1mLast Name\u001b[0m: ")
-        dob[5]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+        dob[5]=DOB(5)
         b[17]=input(u"\u001b[32;1mPet Name\u001b[0m: ")
         b[18]=input(u"\u001b[32;1mCity\u001b[0m: ")
         b[19]=input(u"\u001b[32;1mFeverot\u001b[0m: ")
@@ -133,14 +152,14 @@ def ques():
         b[21]=input(u"\u001b[32;1mName\u001b[0m: ")
         b[22]=input(u"\u001b[32;1mLast Name\u001b[0m: ")
         b[23]=input(u"\u001b[32;1mPet Name\u001b[0m: ")
-        dob[6]=input(u"\u001b[36;1mDDMMYYYY\u001b[0m: ")
+        dob[6]=DOB(6)
         b[24]=input(u"\u001b[32;1mFeverot\u001b[0m: ")
     baby=input(u"\u001b[33;1mDo you want to bind about his/her Children ? \u001b[0m")
     if baby == "y" or baby == "yes":
         b[25]=input(u"\u001b[32;1mName\u001b[0m: ")
         b[26]=input(u"\u001b[32;1mLast Name\u001b[0m: ")
         b[27]=input(u"\u001b[32;1mPet Name\u001b[0m: ")
-        dob[7]=input(u"\u001b[36;1mDDMMYYY\u001b[0m: ")
+        dob[7]=DOB(7)
         b[27]=input(u"\u001b[32;1mFeverot\u001b[0m: ")
     b[28]=input(u"\u001b[35;1mVectom's Most used word or name or ... \u001b[0m: ")
     Freetype=input(u"\u001b[33;1mDo you want to add some more info ? \u001b[0m")
