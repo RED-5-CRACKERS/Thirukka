@@ -80,13 +80,18 @@ def opt():
 |              |  clear  | Clear Terminal                      |
 +--------------+---------+-------------------------------------+
 | Exit command |  Q or q | Quit                                |
-+--------------+---------+-------------------------------------+\u001b[0m """)
++--------------+---------+-------------------------------------+
+Note\u001b[0m: \u001b[2;1mActually it add words like Mergeing type.
+It does not delete any word if file already exists.Jest add words\u001b[0m
+\u001b[32;1m--------------------------ThankYou------------------------------\u001b[0m""")
             elif option == "":
                 pass
             else:
                 print("Ooops!,  '{}' Not Found.Try '?'  ".format(option))
     except:
         pass
+
+
 def ques():
     b=["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
     dob=["","","","","","","","","","","","","","","",""]
@@ -255,7 +260,9 @@ def ques():
     print(u"| Name of the wordlist         | Total Number of Lines Added   |")
     print(u"+------------------------------+-------------------------------+")
     print(u"| \u001b[37;1m",lis[0]," "*(26-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",lis[1]," "*(27-len(lis[1])),"\u001b[32;1m|")
-    print(u"+------------------------------+-------------------------------+\u001b[0m")   
+    print(u"+------------------------------+-------------------------------+\u001b[0m")
+
+
 def upass():
     try:
         zzz=["Generating...","gEnerating...","geNerating...","genErating...","geneRating...","generAting...","generaTing...","generatIng...","generatiNg...","generatinG...","generating_..","generating._.","generating.._"]
@@ -264,8 +271,10 @@ def upass():
         chars=""
         min_=""
         max_=""
-        while chars == "":
+        while chars == "" or len(chars)!=len(set(chars)):
             chars=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/charectors\u001b[0m)> \u001b[0m')
+            if len(chars)!=len(set(chars)):
+                print("\u001b[31;1mNote\u001b[0m:\u001b[32;1mDon't enter duplicate in \u001b[0m'{}'".format(chars))
         while min_ == "":
             try:
                 min_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMIN\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[0m'))
@@ -288,20 +297,8 @@ def upass():
         ff=f
         f = open(f, 'a')
         fc=0
-        chars=list(chars)
-        chars2=set()
-        uniq=[]
-        for xuniq in chars:
-            if xuniq not in chars2:
-                uniq.append(xuniq)
-                chars2.add(xuniq)
-        chars2=list(chars2)
-        XX=""
-        for xuniq in range(0,len(chars2)):
-            XX+=chars2[xuniq]
-        dup=len(chars)-len(XX)
         for n in range(min_,max_ + 1):
-            for i in itertools.product(XX, repeat=n):
+            for i in itertools.product(chars, repeat=n):
                 line+=1
                 num=line
                 a = ''.join(i)
@@ -312,10 +309,10 @@ def upass():
                     f.write("%s\n" % c)
                 d=a
                 f.write("%s\n" % d)
-                if fc == 13532:
+                if fc == 30000:
                     lis=["↓","↑","↑","↑","↓","↑"]
                     ran=random.choice(lis)
-                    print(u"\u001b[36;1m ",ran,"\u001b[32;1m,next(zz),\u001b[0m【\u001b[36;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
+                    print(u"\u001b[36;1m ",ran,"\u001b[32;1m",next(zz),"\u001b[0m【\u001b[36;1m",len(a),"\u001b[0m】【\u001b[36;4;1m{}\u001b[0m】".format(a)+"\r",end="")
                     fc=0
                 else:
                     fc+=1
@@ -323,17 +320,16 @@ def upass():
         f.close()
         if up == "y" or up == "Y" or up == "yes":
             line*=3
-        lis=[ff,str(line),str(dup)]
+        lis=[ff,str(line)]
         print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Completed                          ')
-        print(u"\u001b[32;1m+-----------------------+---------------------------+-----------------+")
-        print(u"| Name of the wordlist  |Total Number of Lines Added|Ignored duplicate|")
-        print(u"+-----------------------+---------------------------+-----------------+")
-        print(u"| \u001b[37;1m",lis[0]," "*(19-len(lis[0])),"\u001b[32;1m| \u001b[37;1m",
-                lis[1]," "*(23-len(lis[1])),"\u001b[32;1m|\u001b[37;1m",
-                " ",lis[2]," "*(12-len(lis[2])),"\u001b[32;1m|")
-        print(u"+-----------------------+---------------------------+-----------------+\u001b[0m")
+        print(u"\u001b[32;1m+-----------------------+-----------------------------+")
+        print(u"| Name of the wordlist  | Total Number of Lines Added |")
+        print(u"+-----------------------+-----------------------------+")
+        print(u"| \u001b[37;1m",lis[0]," "*(19-len(lis[0])),"\u001b[32;1m|   \u001b[37;1m",
+                lis[1]," "*(23-len(lis[1])),"\u001b[32;1m|")
+        print(u"+-----------------------+-----------------------------+\u001b[0m")
     except:
         print(u'\u001b[31;1m                  *******                                  \u001b[0m')
         print(sys.exc_info())
-        print(u"\u001b[0m")        
+        print(u"\u001b[0m")
 opt()
