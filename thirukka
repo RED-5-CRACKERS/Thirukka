@@ -25,8 +25,8 @@ print("                ─╚╝──╚╝─╚╝╚══╝╚╝╚═╝
 T()
 def opt():
     print(u"""
-\u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Question type wordlist generator
-\u001b[32;1m [\u001b[31;1m2\u001b[32;1m]. User input possiblitys wordlist generator
+\u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Question type.
+\u001b[32;1m [\u001b[31;1m2\u001b[32;1m]. Iteration type.\u001b[2m (i-e) All possible combination\u001b[0m
 \u001b[32;1m [\u001b[31;1mQ\u001b[32;1m]. Quit
 \u001b[32;1m [\u001b[31;1m?\u001b[32;1m]. Help
             """)
@@ -82,7 +82,7 @@ def opt():
 | Exit command |  Q or q | Quit                                |
 +--------------+---------+-------------------------------------+
 Note\u001b[0m: \u001b[2;1mActually it add words like Mergeing type.
-It does not delete any word if file already exists.Jest add words\u001b[0m
+It does not delete any word if file already exists.Just add words\u001b[0m
 \u001b[32;1m--------------------------ThankYou------------------------------\u001b[0m""")
             elif option == "":
                 pass
@@ -106,14 +106,14 @@ def ques():
                 return dob[_date_]
             else:
                 if len(dob[_date_])==8:
-                    try:
+                    if dob[_date_].isdigit():
                         if int(dob[_date_][:2])>31:
                             print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mInvalied Date\u001b[0m: \u001b[33;1m "+dob[_date_][:2]+"\u001b[0m\u001b[2;1m/MM/YYYY\u001b[0m")
                         elif int(dob[_date_][2:4])>12:
                             print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mInvalied Month\u001b[0m: \u001b[0m\u001b[2;1mDD/\u001b[0m\u001b[33;1m"+dob[_date_][2:4]+"\u001b[0m\u001b[2;1m/YYYY\u001b[0m")
                         else:
                             return dob[_date_]
-                    except:
+                    else:
                         print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mDob must be an Integer")
                 else:
                     print("\u001b[0m[\u001b[31;1m!\u001b[0m] \u001b[31;1mDob must be 8  \u001b[33;1mEg\u001b[0m: \u001b[32;1m12082001 ")
@@ -296,7 +296,7 @@ def upass():
         while chars == "" or len(chars)!=len(set(chars)):
             chars=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/charectors\u001b[0m)> \u001b[0m')
             if len(chars)!=len(set(chars)):
-                print("\u001b[31;1mNote\u001b[0m:\u001b[32;1mDon't enter duplicate in \u001b[0m'{}'".format(chars))
+                print("\u001b[31;1mNote\u001b[0m:\u001b[32;1mDon't enter duplicate in \u001b[0m'{}'.\u001b[2m (i-e) Use leter one time only \u001b[0m".format(chars))
         while min_ == "":
             try:
                 min_=int(input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m2/\u001b[31;4;1mMIN\u001b[0m\u001b[31;1mimum_length\u001b[0m)> \u001b[0m'))
