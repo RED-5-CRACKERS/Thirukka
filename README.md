@@ -2,6 +2,8 @@
 ## _Thirukka_
 
 ### _WORD-LIST-GENARATOR_
+
+Written in python3 script. It generates wordlist for password attacks, url broutforcing, hashcracking, domain discover, ...
 ***
 ### _REQUIRED:_
 * PYTHON3
