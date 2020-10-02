@@ -1,2 +1,6 @@
 #!/bin/bash
-a=$(which ls);c=${a%%ls*};cp thirukka $c;printf "Run '\033[32mthirukka\033[0m'\n";unset a c;
+tmp=$(echo "alias thirukka=\"$(pwd)/$(ls|grep -w thirukka)\"")
+cat ~/.bashrc|grep alias|grep $(pwd)
+if [ $? -ne 0 ];then
+	echo "$tmp"|tee -a ~/.bashrc&&bash
+fi

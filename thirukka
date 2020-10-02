@@ -1,23 +1,87 @@
 #!/usr/bin/python3
 #===========================================================================================================================(Madhava)
 #===========================================================================================================================(R-5-C)
-import os
 import sys
 import time
 import random
 import itertools
+from Uri import *
+from re import ASCII
+from re import search
+from os import system
+from threading import Thread
+from threading import active_count
+from os import get_terminal_size as t_size
+
+try:
+    from requests import get
+except:
+    print("""[!] Module requests is not installed, 
+    Run 'pip install requests' or 'pip3 install requests'""")
+
 RANLIST=[
         "Use '?' to print help banner",
-        "Create html based wordlist by using '4'",
-        "Use '3' to create a wordlist for php",
+        "Search and download from online '3' /<searchquery>, :<s.no>", 
         "'ls' to list all files and directorys in cwd",
         "'du' to see disk usage",
         "'clear' to clear console",
         "'pwd' to print current working directory"
         ]
+def Help_banner():
+    print(u"""\u001b[32;1m-----------------------------Help-------------------------------
+Def\u001b[0m: \u001b[2;1mThirukka is a wordlist generator for password attacks,
+url broutforceing, hash cracking, etc...\u001b[0m\u001b[32;1m
++--------------------------------------------------------------+
+|    Title     | Command |          Discription                |
+|--------------+---------+-------------------------------------|
+|              |    1    | User Intractive mode.               |
+|              |    2    | Charectors all passiblities         |
+| Tool command |    3    | Search and download from online     |
+|              |    4    | Customizer eg:prefix <word> suffix  |
+|              |    ?    | This banner                         |
+|--------------+---------+-------------------------------------|
+|              |   ls    | List directory contents             |
+|System command|   pwd   | Print current working directory     |
+|              |   du    | Disk usage                          |
+|              |  clear  | Clear Terminal                      |
+|--------------+---------+-------------------------------------|
+| Exit command |  Q or q | Quit                                |
++--------------------------------------------------------------+
+| (\u001b[35;1m3\u001b[32;1m) \u001b[4mOnline\u001b[0m\u001b[32;1m:                                                  |
+|                                                              |
+| \u001b[32;4;1mThirukka\u001b[0m> 3\u001b[32;1m                                                  |
+| \u001b[35;1msearch :  "\u001b[32;1m/\u001b[0m<pattern>" \u001b[32;1m                                      |
+| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m3/Online\u001b[0m)> /password\u001b[32;1m                                |
+| \u001b[35;1mDownload :  "\u001b[32;1m:\u001b[0m<s.no>"\u001b[32;1m                                        |
+| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m3/Online\u001b[0m)> :146\u001b[32;1m                                     |
+|                                                              |
+| (\u001b[35;1m4\u001b[32;1m) \u001b[4mCustomizer\u001b[0m\u001b[32;1m:                                              |
+|                                                              |
+| \u001b[32;4;1mThirukka\u001b[0m> 4\u001b[32;1m                                                  |
+| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Prefix\u001b[0m): https://www.\u001b[32;1m                             |
+| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Suffix\u001b[0m): .mysite.com\u001b[32;1m                              |
+| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Inputfile\u001b[0m): words.txt\u001b[32;1m                             |
+| \u001b[33;1mDo you want to add some more info ? \u001b[0m:\u001b[32;1m                        |
+| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Outputfilename:wordlist.txt\u001b[0m):\u001b[32;1m                     |
+| [\u001b[31;1m*\u001b[32;1m] Process done.                                            |
+| \u001b[0m\u001b[31;1mFilename\u001b[0m: wordlist.txt\u001b[32;1m                                       |
+| \u001b[32;4;1mThirukka\u001b[0m> q\u001b[32;1m                                                  |
+| \u001b[31;1mroot@localhost\u001b[0m:\u001b[34;1m~\u001b[0m# cat wordlist.txt\u001b[32;1m                           |
+| \u001b[0mhttps://www.contacts.mysite.com\u001b[32;1m                              |
+| \u001b[0mhttps://www.topics.mysite.com\u001b[32;1m                                |
+| \u001b[0mhttps://www.support.mysite.com\u001b[32;1m                               |
+| \u001b[31;1mroot@localhost\u001b[0m:\u001b[34;1m~\u001b[0m#\u001b[32;1m                                            |
+|                                                              |
++--------------------------------------------------------------+\u001b[0m
+\u001b[36mNote\u001b[0m : \u001b[2;1mWorks under Append mode.\u001b[0m
+\u001b[36mIssue\u001b[0m:\u001b[2m https://github.com/RED-5-CRACKERS/Thirukka/issues\u001b[0m
+\u001b[36mPulls\u001b[0m:\u001b[2m https://github.com/RED-5-CRACKERS/Thirukka/pulls\u001b[0m
+\u001b[36mSite\u001b[0m:\u001b[2m https://red5cracker.wordpress.com\u001b[0m
+\u001b[32;1m---------------------------ThankYou-----------------------------\u001b[0m""")
 def T():
-    time.sleep(0.02)
-print(" \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \u001b[32;1m");time.sleep(0.4)
+    time.sleep(0.01)
+clean = '\n'*(t_size()[1])
+print(f"{clean}\u001b[32;1m");time.sleep(0.4)
 print("────────────────────────────────────────────────────────────────");T()
 print("───────────╔════╗╔╗─╔╗╔══╗╔═══╗╔╗─╔╗╔╗╔═╗╔╗╔═╗╔═══╗─────────────");T()
 print("───────────║╔╗╔╗║║║─║║╚╣─╝║╔═╗║║║─║║║║║╔╝║║║╔╝║╔═╗║─────────────");T()
@@ -34,10 +98,8 @@ def opt():
     print("\u001b[0m\u001b[36mTips\u001b[0m: \u001b[2m{}\u001b[0m\u001b[32;1m".format(random.choice(RANLIST)));T()
     print("----------------------------------------------------------------");T()
     print("\u001b[32;1m [\u001b[31;1m1\u001b[32;1m]. Intractive.       \u001b[32;1m [\u001b[31;1m2\u001b[32;1m]. Iteration.");T()
-    print("\u001b[32;1m [\u001b[31;1m3\u001b[32;1m]. Wordlist for php. \u001b[32;1m [\u001b[31;1m4\u001b[32;1m]. Html word based.");T()
-    print("\u001b[32;1m [\u001b[31;1m5\u001b[32;1m]. Xml word based.   \u001b[32;1m [\u001b[31;1m6\u001b[32;1m]. Js,jsw,jsp,jsv word based.");T()
-    print("\u001b[32;1m [\u001b[31;1m?\u001b[32;1m]. Help              \u001b[32;1m [\u001b[31;1m7\u001b[32;1m]. Customizer. \u001b[0m\u001b[36mprefix\u001b[33m\u001b[2m<Anyword>\u001b[0m\u001b[36msuffix");T()
-    print("\u001b[32;1m [\u001b[31;1mQ\u001b[32;1m]. Quit");T()
+    print("\u001b[32;1m [\u001b[31;1m3\u001b[32;1m]. Online (best)     \u001b[32;1m [\u001b[31;1m4\u001b[32;1m]. Customizer. \u001b[0m\u001b[36mprefix\u001b[33m\u001b[2m<Anyword>\u001b[0m\u001b[36msuffix");T()
+    print("\u001b[32;1m [\u001b[31;1m?\u001b[32;1m]. Help              \u001b[32;1m [\u001b[31;1mQ\u001b[32;1m]. Quit");T()
     print("----------------------------------------------------------------");T()
     try:
         while True:
@@ -56,89 +118,30 @@ def opt():
                         pass
                 elif option == "3":
                     try:
-                        php()
+                        Online()
                     except:
                         pass
                 elif option == "4":
                     try:
-                        html()
-                    except:
-                        pass
-                elif option == "5":
-                    try: 
-                        xml()
-                    except:
-                        pass
-                elif option == "6":
-                    try:
-                        js()
-                    except:
-                        pass
-                elif option == "7":
-                    try:
                         customize()
                     except:
                         pass
-                elif option == "q" or option == "Q":
+                elif option in ("quit", "exit"):
                     exit()
                 elif option == "ls":
                     print("\u001b[32;1m----------------------------------------------------------------\u001b[0m")
-                    os.system("ls -Alh --color")
+                    system("ls -Alh --color")
                     print("\u001b[32;1m----------------------------------------------------------------\u001b[0m")
                 elif option == "du":
                     print("\u001b[32;1m----------------------------------------------------------------\u001b[0m")
-                    os.system("du -sh *")
+                    system("du -sh *")
                     print("\u001b[32;1m----------------------------------------------------------------\u001b[0m")
                 elif option == "pwd":
-                    os.system("pwd")
+                    system("pwd")
                 elif option == "clear":
-                    os.system("clear")
+                    system("clear")
                 elif option == "?":
-                    print(u"""\u001b[32;1m-----------------------------Help-------------------------------
-Def\u001b[0m: \u001b[2;1mThirukka is a wordlist generator for password attacks,
-url broutforceing, hash cracking, etc...\u001b[0m\u001b[32;1m
-+--------------------------------------------------------------+
-|    Title     | Command |          Discription                |
-|--------------+---------+-------------------------------------|
-|              |    1    | User Intractive mode.               |
-|              |    2    | Charectors all passiblities         |
-|              |    3    | Wordlist for php                    |
-| Tool command |    4    | Html word based Wordlist.           |
-|              |    5    | Xml word based Wordlist.            |
-|              |    6    | Js,jsw,jsp,jsv word based Wordlist. |
-|              |    7    | Customizer eg:prefix <word> suffix  |
-|              |    ?    | This banner                         |
-|--------------+---------+-------------------------------------|
-|              |   ls    | List directory contents             |
-|System command|   pwd   | Print current working directory     |
-|              |   du    | Disk usage                          |
-|              |  clear  | Clear Terminal                      |
-|--------------+---------+-------------------------------------|
-| Exit command |  Q or q | Quit                                |
-+--------------------------------------------------------------+
-|                                                              |
-| (\u001b[35;1m7\u001b[32;1m) \u001b[4mCustomizer\u001b[0m\u001b[32;1m:                                              |
-|                                                              |
-| \u001b[32;4;1mThirukka\u001b[0m> 7\u001b[32;1m                                                  |
-| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Prefix\u001b[0m): https://www.\u001b[32;1m                             |
-| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Suffix\u001b[0m): .mysite.com\u001b[32;1m                              |
-| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Inputfile\u001b[0m): words.txt\u001b[32;1m                             |
-| \u001b[33;1mDo you want to add some more info ? \u001b[0m:\u001b[32;1m                        |
-| \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Outputfilename:wordlist.txt\u001b[0m):\u001b[32;1m                     |
-| [\u001b[31;1m*\u001b[32;1m] Process done.                                            |
-| \u001b[0m\u001b[31;1mFilename\u001b[0m: wordlist.txt\u001b[32;1m                                       |
-| \u001b[32;4;1mThirukka\u001b[0m> q\u001b[32;1m                                                  |
-| \u001b[31;1mroot@localhost\u001b[0m:\u001b[34;1m~\u001b[0m# cat wordlist.txt\u001b[32;1m                           |
-| \u001b[0mhttps://www.contacts.mysite.com\u001b[32;1m                              |
-| \u001b[0mhttps://www.topics.mysite.com\u001b[32;1m                                |
-| \u001b[0mhttps://www.support.mysite.com\u001b[32;1m                               |
-| \u001b[31;1mroot@localhost\u001b[0m:\u001b[34;1m~\u001b[0m#\u001b[32;1m                                            |
-|                                                              |
-+--------------------------------------------------------------+\u001b[0m
-\u001b[36mNote\u001b[0m : \u001b[2;1mWorks under Append mode.\u001b[0m
-\u001b[36mIssue\u001b[0m:\u001b[2m https://github.com/RED-5-CRACKERS/Thirukka/issues\u001b[0m
-\u001b[36mpulls\u001b[0m:\u001b[2m https://github.com/RED-5-CRACKERS/Thirukka/pulls\u001b[0m
-\u001b[32;1m---------------------------ThankYou-----------------------------\u001b[0m""")
+                    Help_banner()
                 elif option == "":
                     pass
                 else:
@@ -430,53 +433,6 @@ def upass():
         print(u"+-----------------------+-----------------------------+\u001b[0m")
     except:
         print("                                ")
-def php():
-    word='_php\n_php-nusoap\n_phpmyadmin\namfphp\narticlephp\ncgi-php\ncontact25php\nctpaygatephp\nmaphp\nmyphp\nmyphpadmin\nmyphpnuke\nphp\nphp-bin\nphp-inc\nphp-includes\nphp-lib\nphp-ofc-library\nphp-sdk\nphp-stats\nphp-uploads\nphp168\nphp2\nphp3\nphp4\nphp5\nphpBB\nphpBB2\nphpEventCalendar\nphpMyAdmin\nphpSQLiteAdmin\nphp_files\nphp_inc\nphp_include\nphp_includes\nphp_lib\nphp_paypal\nphp_scripts\nphp_speedy\nphp_test\nphp_uploads\nphpad\nphpadm\nphpadmin\nphpads\nphpadsnew\nphpbay\nphpbb\nphpbb2\nphpbb3\nphpbb_seo\nphpcache\nphpcalendar\nphpcaptcha\nphpcart\nphpcms\nphpcode\nphpcollab\nphpcounter\nphpdig\nphpdoc\nphpedit\nphpesp\nphpexcelreader\nphpfiles\nphpform\nphpformgen\nphpforms\nphpgroupware\nphpicalendar\nphpids\nphpinc\nphpinclude\nphpincludes\nphpinfo\nphpjobscheduler\nphpld\nphpldapadmin\nphplib\nphplist\nphplive\nphplivehelper\nphplot\nphpma\nphpmail\nphpmailer\nphpmanual\nphpmv\nphpmv2\nphpmy\nphpmyadmin\nphpmyadmin2\nphpmyadmin3\nphpmybackuppro\nphpmychat\nphpmysql\nphpmyvisites\nphpnews\nphpnuke\nphpodp\nphponline\nphpopenchat\nphpopentracker\nphppgadmin\nphpq\nphpqjr\nphprojekt\nphprusearch\nphps\nphpscripts\nphpsearch_files\nphpsecinfo\nphpsecurepages\nphpsessid\nphpshield\nphpshop\nphpsitemap\nphpsitemapng\nphpsso_server\nphpstats\nphpsurveyor\nphpsysinfo\nphptell\nphptest\nphpthumb\nphptmp\nphpweather\nphpwiki\nadmin/index.php\nboard/index.php\ncommunity/index.php?analized=anything\ndoc/admin/index.php\ndotproject/modules/files/index_table.php\nfaqman/index.php\nfilemanager/index.php3\nindex.php?base=test%20\nindex.php?IDAdmin=test\nindex.php?pymembs=admin\nindex.php?SqlQuery=test%20\nindex.php?tampon=test%20\neWebEditPro/ewebeditpro.php\naddcert.php\naddcert.php.en\nagents.php\naiclogin.php\naiclogin.php.en\naiclogin_cert.php\nchpbrdg.php\nchpbrdg.php.en\nchpdata.php\nchpdata.php.en\nchphead.php\nchphead.php.en\nchplinkstrt.php\nchpstrt.php\nchpstrt.php.en\nchpview.php\ncpqlogin.php\ncpqlogin.php.en\ncpqopts.php\ncpqopts.php.en\ncredits.php\ncredits.php.en\ncustcert.php.en\nerrlog.php\nerrlog.php.en\nfull_dns.php\nfull_dns.php.en\ngroups.php\ngroups.php.en\nindex.php\nindex.php.en\nipbind.php\nipbind.php.en\niprstrct.php\niprstrct.php.en\nkerberos.php\nkerberos.php.en\nkrbFailRedirect.php\nlang.php\nlang/en/language.php\nlang/en/log_messages.php\nlang_webapp.php\nlocal.php\nlocal.php.en\nlog_engine.php\nmessage.php\nmessage.php.en\nmessage_strings.php\nno_javascript.php\nnotfound.php\nport2301.php\nshowcert.php\nshowcert.php.en\nsmhhelp.php\nsmhhelp.php.en\nsmhsupport.php\nsmhutil/snmpchp.php.en\ntimeouts.php\ntimeouts.php.en\ntrstcert.php\ntrstcert.php.en\nui_config.php\nuser_prefs.php\n'
-    fname=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m3/filename:php.txt\u001b[0m): \u001b[36;1m').strip()
-    if fname == "":
-        fname="php.txt"
-    a=open(fname,"a")
-    a.write(word)
-    print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Created for php.')
-    print("\u001b[36;1mFilename\u001b[0m:",fname)
-    a.close()
-
-
-def html():
-    word='_html\nadvhtml_images\nadvhtml_popups\nadvhtml_upload\najaxhtml\najaxresponhtml\ncache_html\ncgi-html\ndhtml\neditorhtml\nemail_html\nestaticas_html\ngenhtml\nhtml\nhtml2\nhtml2pdf\nhtml5\nhtml_editor\nhtml_email\nhtml_emails\nhtml_files\nhtml_old\nhtml_pages\nhtml_snippets\nhtml_templates\nhtmlarea\nhtmledit\nhtmleditor\nhtmlemail\nhtmlfiles\nhtmlimages\nhtmlmail\nhtmlmimemail5\nhtmlpdf\nhtmlrotate\nhtmls\nhtmltag\nib_html\nindex_html\njhtml\nmenu_dhtml\nneathtml\nold-html\nold_html\noldhtml\nphtml\npublic_html\nrhtml\nindex.html\nindex.html\nindex.html.ca\nindex.html.cz.iso8859-2\nindex.html.de\nindex.html.dk\nindex.html.ee\nindex.html.el\nindex.html.en\nindex.html.es\nindex.html.et\nindex.html.fr\nindex.html.he.iso8859-8\nindex.html.hr.iso8859-2\nindex.html.it\nindex.html.ja.iso2022-jp\nindex.html.kr.iso2022-kr\nindex.html.ltz.utf8\nindex.html.lu.utf8\nindex.html.nl\nindex.html.nn\nindex.html.no\nindex.html.po.iso8859-2\nindex.html.pt\nindex.html.pt-br\nindex.html.ru.cp-1251\nindex.html.ru.cp866\nindex.html.ru.iso-ru\nindex.html.ru.koi8-r\nindex.html.ru.utf8\nindex.html.se\nindex.html.tw\nindex.html.tw.Big5\nindex.html.var\ncgi-bin/stats-bin-p/reports/index.html\nLoginPage.html\nXcelerate/Admin/LoginPage.html\nXcelerate/DownloadPage.html\nXcelerate/LoginPage.html\nXcelerate/SampleSites.html\nadminforms.html\ncstest.html\neWebEditPro/index.html\nform.html\nfuturetense_cs/adminforms.html\ninit.html\njsp/index.html\nlogin.html\nmirror.html\nnewtable.html\nretrieve.html\n_vti_bin/shtml.dll\n_vti_inf.html\n_vti_inf.html \nshtml.dll\nshtml.exe\nlegend.html\nno_javascript.html\nred2301.html\nHFM/Common/Empty.html\nHFM/ThirdParty/Bindows/html\nHFM/ThirdParty/Bindows/html/bimain.html\nHFM/ThirdParty/Bindows/html/BiWsdlBuiltinTypes.xsd\nHFM/ThirdParty/Bindows/html/blank.html\nx.shtml\n?wp-html-rend\ndirb_random.shtml\nindex.html\nexamples/jsp/index.html\nexamples/servlets/index.html\nhost-manager/html/*\nhtml/*\nmanager/html\nmanager/html/*\nwebdav/index.html\n*.html\n*.shtml/\nconsole-help/doc/en-us/com/bea/wlserver/core/index.html\ndocs/core/index.html\ndocs/index.html\nexamplesWebApp/examples/src/examples/copyright.html\nfast_track.html\nhelloWebApp/hello.html\npublic_html\nstock/index.html\nstock/publisher.html\nwls_utc/index.html\nWebSphereSamples/SingleSamples/AccountAndTransfer/create.html\nWebSphereSamples/SingleSamples/Increment/increment.html\nWebSphereSamples/YourCo/main.html\napadminred.html\naphtpasswd.html\nestore/annotated-index.html\nestore/index.html\nindex.html\nlogin.html\nmanual/index.html\nwebapp/examples/login.html\n'
-    fname=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/filename:html.txt\u001b[0m): \u001b[36;1m').strip()
-    if fname == "":
-        fname="html.txt"
-    a=open(fname,"a")
-    a.write(word)
-    print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Created html name based words.')
-    print("\u001b[36;1mFilename\u001b[0m:",fname)
-    a.close()
-
-
-def xml():
-    word='_cs_xmlpub\n_xml\naggancixml\ncore-xml\ndataxml\ndropdownxml\nflashxml\nformandxml\nfotoxml\nhotelxml\nraw_xml\nsametime/hostAddress.xml\neWebEditPro/config.xml\nHFM/Calcman/convxmltovbs.asp\nHFM/GlobalNav/HFMStaticObjectList.xml\nHFM/GlobalWorkspaceNav/bpm/conf/HfmConfig.xml\nHFM/GlobalWorkspaceNav/HFMStaticObjectList.xml\nHFM/Java/classes/xerces/xmlParserAPIs.jar\nHFM/Security/bpm/BpmLauncher.xml\nHFM/Security/bpm/BpmUi_Version.xml\nHFM/Security/bpm/conf/BpmContextConfig.xml\nHFM/Security/bpm/conf/BpmDebugConfig.xml\nHFM/Security/bpm/conf/BpmReleaseConfig.xml\nHFM/Security/bpm/conf/HfmConfig.xml\nHFM/Security/conf/HfmConfig.xml\nHFM/Security/modules/com/hyperion/hfm/web/security/assign/DataSet.xml\nhost-manager/host-manager.xml\nmanager/manager.xml\nWEB-INF./web.xml\nWEB-INF/web.xml\nexamplesWebApp/OrderParser.jsp?xmlfile=C:/bea/weblogic81/samples/server/examples/src/examples/xml/orderParser/order.xml\norg.apache.beehive.netui.pageflow.xmlhttprequest.XmlHttpRequestServlet\nweb.xml\nweblogic.xml\nxmlBean\nxml_xmlBean\nStockQuote/services/xmltoday-delayed-quotes\nStockQuote/services/xmltoday-delayed-quotes/wsdl/*\nWEB-INF./web.xml\nWEB-INF/web.xml\nadmin-authz.xml\ncell.xml\nnode.xml\nresources.xml\nsecurity.xml\nserver.xml\nserverindex.xml\nvariables.xml\nvirtualhosts.xml\nweb.xml\n'
-    fname=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m5/filename:xml.txt\u001b[0m): \u001b[36;1m').strip()
-    if fname == "":
-        fname="xml.txt"
-    a=open(fname,"a")
-    a.write(word)
-    print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Created xml name based words.')
-    print("\u001b[36;1mFilename\u001b[0m:",fname)
-    a.close()
-
-
-def js():
-    word="_js\nadjs\napp_js\nbjs\ncch_js\nchromejs\ncjs\ncss-js\ncss_js\ncssjs\ndjs\nextern_js\nextjs\nfeed2js\nfuploadjs\ngetjs\njgs_galerie_js\njjs\njs\njs-global\njs-lib\njs1\njs2\njsFiles\njs_css\njs_file\njs_files\njs_includes\njs_menu\njs_new\njs_old\njs_peels\njs_scripts\njsapi\njsc\njscal\njscalendar\njscolor\njscommon\njscript\njscripts\njscss\njseditors\njserver\njsession\njsf\njsfiles\njshandler\njsinc\njsky\njslib\njsmenu\njson\njsonwrapper\njsoutput\njsp\njsp-examples\njsp2\njsps\njsr\njss\njsscript\njsscripts\njsso\njstree\njsx\nkaosjs\nlibjs\nloadjs\nmenujs\nmyjs\nnewjs\nnjs\nnojs\npsjs_datalogs\nfingerprint.jsp\nhappyaxis.jsp\ni18nLib.jsp  \nindex.jsp\nsametime/stadmin/LoggingError.jsp\nsametime/stadmin/LoggingMeetingDetails.jsp\nsametime/stadmin/LoggingViewSelection.jsp\nsametime/stadmin/LoggingViewTable.jsp\nsametime/stadmin/MonitoringViewGeneralServerStatus.jsp\nsametime/stadmin/MonitoringViewMeetingsAndParticipants.jsp\nsametime/stadmin/MonitoringViewOverview.jsp\nsametime/stadmin/MonitoringViewSelection.jsp\nsametime/stadmin/MonitoringViewToolsInMeetings.jsp\nsametime/stadmin/MonitoringViewTotalLogins.jsp\nsametime/stadmin/StatisticsViewSelection.jsp\nanalytics/login.jsp\neWebEditPro/ewebeditpro.jsp\njsp\njsp/cs_deployed\njsp/index.html\nchp.js.en\nchpif.js\njs\njs/FormManager.js\njs/LayoutManager.js\njs/buttonManager.js\njs/error_table.js\njs/functions.js\njs/global.js\njs/ui.js\ntreebody.js.en\ndirb_random.jsp\njsp\nweb-console/AOPBinding.jsp\nweb-console/ServerInfo.jsp\nweb-console/SysProperties.jsp\nweb-console/WebModule.jsp\nweb-console/applet.jsp\nweb-console/listMonitors.jsp\nexamples/jsp/index.html\nexamples/jsp/snp/snoop.jsp\nexamples/jsp/source.jsp\nexamples/servlet/default/jsp/snp/snoop.jsp\nexamples/servlet/default/jsp/source.jsp\nexamples/servlet/org.apache.catalina.servlets.DefaultServlet/jsp/snp/snoop.jsp\nexamples/servlet/org.apache.catalina.servlets.DefaultServlet/jsp/source.jsp\nexamples/servlet/org.apache.catalina.servlets.WebdavServlet/jsp/snp/snoop.jsp\nexamples/servlet/org.apache.catalina.servlets.WebdavServlet/jsp/source.jsp\njsp-examples\n*.jsp\n*.jsp/\nLogin.jsp\na2e2gp2r2/x.jsp\nasyncServlet/main.jsp\nbea-guardian-agent/test.jsp\nbea_wls_internal/a2e2gp2r2/x.jsp\nbea_wls_internal/psquare/x.jsp\nconsole/login/LoginForm.jsp\nconsolehelp/index.jsp\nexamplesWebApp/EJBeanManagedClient.jsp\nexamplesWebApp/InteractiveQuery.jsp\nexamplesWebApp/OrderParser.jsp?xmlfile=C:/bea/weblogic81/samples/server/examples/src/examples/xml/orderParser/order.xml\nexamplesWebApp/WebservicesEJB.jsp\nexamplesWebApp/Wsdl2Service.jsp\nexamplesWebApp/index.jsp\next_servlet_annotations/loginForm.jsp\nframework/skeletons/console/js/*\nhelloWebApp/hello.jsp\nindex.jsp\njsp/*\njspSimpleTag\njspSimpleTagEar\njspbuild\nlogin.jsp\nportalAppAdmin/login.jsp\npsquare/x.jsp\nreviewService/createArtist_service.jsp\nreviewService/index.jsp\nstock/index.jsp\nstock/publisher.jsp\nuddiexplorer/Login.jsp\nuddiexplorer/index.jsp\nwls_utc/error.jsp\nwls_utc/index.jsp\nwls_utc/messageLog.jsp\nwls_utc/selectWsdl.jsp\n*.jsp\n*.jsv\n*.jsw\nAddressBookJ2WE/*.jsp\nAddressBookJ2WE/*.jsv\nAddressBookJ2WE/*.jsw\nAddressBookW2JE/*.jsp\nAddressBookW2JE/*.jsv\nAddressBookW2JE/*.jsw\nBank/*.jsp\nBank/*.jsv\nBank/*.jsw\nGreenhouseEJB/*.jsp\nGreenhouseEJB/*.jsv\nGreenhouseEJB/*.jsw\nHelloHTML.jsp\nHelloHTMLError.jsp\nHelloVXML.jsp\nHelloVXMLError.jsp\nHelloWML.jsp\nHelloWMLError.jsp\nHitCount.jsp\nOrderProcessorEJB/*.jsp\nOrderProcessorEJB/*.jsv\nOrderProcessorEJB/*.jsw\nStockQuote/*.jsp\nStockQuote/*.jsv\nStockQuote/*.jsw\nTechnologySamples/AddressBook/*.jsp\nTechnologySamples/AddressBook/*.jsv\nTechnologySamples/AddressBook/*.jsw\nWSsamples/index.jsp\nWarehouseEJB/*.jsp\nWarehouseEJB/*.jsv\nWarehouseEJB/*.jsw\nadmin/logon.jsp\nadmin/secure/logon.jsp\nauth_error.jsp\ncachemonitor/statistics.jsp\ncom.ibm.ws.console.events/runtime_messages.jsp\ndebug_error.jsp\nerror.jsp\nindex.jsp\nivt/ivtAddition.jsp\nivt/ivtDate.jsp\njsp\nopc/*.jsp\nopc/*.jsv\nopc/*.jsw\nruntime_messages.jsp\nsimple.jsp\nstatistics.jsp\nvery_simple.jsp\nwebapp/examples/simple.jsp\n"
-    
-    fname=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m6/filename:js.txt\u001b[0m): \u001b[36;1m').strip()
-    if fname == "":
-        fname="js.txt"
-    a=open(fname,"a")
-    a.write(word)
-    print(u'\u001b[32;1m[\u001b[31;1m*\u001b[32;1m] Successfully Created js,jsp,jsw name based words.')
-    print("\u001b[36;1mFilename\u001b[0m:",fname)
-    a.close()
 
 def customize():
     R="\u001b[31;1m"
@@ -486,10 +442,10 @@ def customize():
     S="\u001b[36;1m"
     List={}
     count=1
-    prefix=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Prefix\u001b[0m): \u001b[0m')
-    suffix=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Suffix\u001b[0m): \u001b[0m')
+    prefix=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Prefix\u001b[0m): \u001b[0m')
+    suffix=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Suffix\u001b[0m): \u001b[0m')
     while True:
-        FileI=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Inputfile\u001b[0m): \u001b[0m').strip()
+        FileI=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Inputfile\u001b[0m): \u001b[0m').strip()
         if FileI == "":
             break
         try:
@@ -513,7 +469,7 @@ def customize():
             else:
                 print("   \t{}----{}".format(G,N))
                 break
-    op=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m7/Outputfilename:wordlist.txt\u001b[0m): \u001b[36;1m').strip()
+    op=input(u'\u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m4/Outputfilename:wordlist.txt\u001b[0m): \u001b[36;1m').strip()
     if op == "":
         op="wordlist.txt"
     fo=open(op,"a")
@@ -533,6 +489,94 @@ def customize():
     print("{}[{}*{}] Process done".format(G,R,G))
     print("{}Filename{}: {}".format(R,N,op))
 
+def Online():
+    def Search(val=''):
+        SS = '\u001b[45m'
+        NN = '\u001b[0m'
+        RR = '\u001b[31;1m'
+        GG = '\u001b[32;1m'
+        PP = '\u001b[36;1m'
+        count = 1
+        tmp_list=[]
+        tmp_dict={}
+        for i in search_modules:
+            tmp_list.append(i[1:])
+        for i in tmp_list:
+            x = search(r'(.*?)'+val+'(.*).*', i.lower(), ASCII)
+            try:
+                tmp_dict[count]=x.group(1)+val+x.group(2)
+                tmp_dict[count]=i
+                if count == 1:
+                    line="-"*len(val)
+                    print(f"{PP} S.no   Result for '{val}'\n ----   ------ ---  {line}")
+                print(f"{RR}{count:^5}{NN}  {x.group(1)}{SS}{val}{NN}{x.group(2)}")
+                count += 1
+            except:
+                pass
+        if count == 1:
+            print(f"{GG}[{RR}!{GG}] No result found for {PP}'{val}'{NN}")
+        else:
+            print()
+        return tmp_dict
 
+    def Download(query, auther):
+        print("\u001b[10D\u001b[1A\u001b[33;1mDownloading...            \u001b[0m")
+        req= get(query)
+        for i in range(1, len(query)):
+            if query[-i] == "/":
+                name=query[-i+1:]
+                break
+        f= open(name, 'a')
+        f.write(req.text)
+        f.close()
+        req.close()
+        print("\u001b[100D\u001b[1A\u001b[33;1mDownloaded \u001b[0m"+name+auther+"\u001b[32;1m\u001b[0m            ")
+
+
+
+    def main():
+        NN = '\u001b[0m'
+        UU = '\u001b[4m'
+        RR = '\u001b[31;1m'
+        GG = '\u001b[32;1m'
+        SS = '\u001b[36;1m'
+        Min = '-'*64
+        while True:
+            _inp_ = input(f"{GG}{UU}Thirukka{NN}({RR}3/Online{NN})> ").strip()
+            if _inp_ != (''): 
+                if _inp_[0]=='/':
+                    Dict=Search(_inp_[1:].lower())
+                elif _inp_[0]==":":
+                    try:
+                        repo ="https://github.com/danielmiessler/SecLists/raw/master"
+                        real_author =f"{RR}@{SS}danielmiessler{NN}"
+                        Thread(target=Download, args=(repo+Dict[int(_inp_[1:])], real_author,)).start()
+                    except:
+                        print(f"{GG}[{RR}!{GG}] S.no '{_inp_[1:]}' not listed")
+                elif _inp_ == 'back':
+                    break
+                elif _inp_ == "ls":
+                    print(f"{GG}{Min}{NN}")
+                    system("ls -Alh --color")
+                    print(f"{GG}{Min}{NN}")
+                elif _inp_ == "du":
+                    print(f"{GG}{Min}{NN}")
+                    system("du -sh *")
+                    print(f"{GG}{Min}{NN}")
+                elif _inp_ == "pwd":
+                    system("pwd")
+                elif _inp_ in ("quit", "exit"):
+                    if active_count() != 1:
+                        if input("background job is running if you want to quit [y/n]: ") =="y":
+                            exit()
+                    else:
+                        exit()
+                elif _inp_ == "clear":
+                    system("clear")
+                elif _inp_ == "?":
+                    Help_banner()
+                else:
+                    print(f"{GG}[{RR}!{GG}] Ooops! '{_inp_}' not found. try '?'")
+    main()
 
 opt()

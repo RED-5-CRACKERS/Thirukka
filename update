@@ -1,3 +1,2 @@
 #!/bin/bash
-printf "\033[32m$(git pull || sudo git pull 2>/dev/null)\033[0m\n"
-./setup
+printf "\033[32m$(git pull 2>/dev/null)\033[0m\n"

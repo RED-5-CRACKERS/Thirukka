@@ -19,8 +19,6 @@ or
 ##
 > _```user@localhost:~$ cd Thirukka```_
 ##
-> _```user@localhost:~/Thirukka$ chmod +x setup```_
-##
 > _```user@localhost:~/Thirukka$ ./setup```_
 ##
 
