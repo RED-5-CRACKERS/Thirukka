@@ -24,6 +24,7 @@ RANLIST=[
         "Search and download from online '3' /<searchquery>, :<s.no>", 
         "'ls' to list all files and directorys in cwd",
         "'du' to see disk usage",
+        "Search and download from online '3' /<searchquery>, :<s.no>",
         "'clear' to clear console",
         "'pwd' to print current working directory"
         ]
@@ -38,6 +39,7 @@ url broutforceing, hash cracking, etc...\u001b[0m\u001b[32;1m
 |              |    2    | Charectors all passiblities         |
 | Tool command |    3    | Search and download from online     |
 |              |    4    | Customizer eg:prefix <word> suffix  |
+|              |  back   | Go back                             |
 |              |    ?    | This banner                         |
 |--------------+---------+-------------------------------------|
 |              |   ls    | List directory contents             |
@@ -45,14 +47,14 @@ url broutforceing, hash cracking, etc...\u001b[0m\u001b[32;1m
 |              |   du    | Disk usage                          |
 |              |  clear  | Clear Terminal                      |
 |--------------+---------+-------------------------------------|
-| Exit command |  Q or q | Quit                                |
+| Exit command |  exit   | Quit                                |
 +--------------------------------------------------------------+
 | (\u001b[35;1m3\u001b[32;1m) \u001b[4mOnline\u001b[0m\u001b[32;1m:                                                  |
 |                                                              |
 | \u001b[32;4;1mThirukka\u001b[0m> 3\u001b[32;1m                                                  |
-| \u001b[35;1msearch :  "\u001b[32;1m/\u001b[0m<pattern>" \u001b[32;1m                                      |
+| \u001b[35;1msearch ==> \u001b[32;1m/\u001b[0m<pattern>  \u001b[32;1m                                      |
 | \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m3/Online\u001b[0m)> /password\u001b[32;1m                                |
-| \u001b[35;1mDownload :  "\u001b[32;1m:\u001b[0m<s.no>"\u001b[32;1m                                        |
+| \u001b[35;1mDownload ==> \u001b[32;1m:\u001b[0m<s.no> \u001b[32;1m                                        |
 | \u001b[32;4;1mThirukka\u001b[0m(\u001b[31;1m3/Online\u001b[0m)> :146\u001b[32;1m                                     |
 |                                                              |
 | (\u001b[35;1m4\u001b[32;1m) \u001b[4mCustomizer\u001b[0m\u001b[32;1m:                                              |
@@ -73,7 +75,6 @@ url broutforceing, hash cracking, etc...\u001b[0m\u001b[32;1m
 | \u001b[31;1mroot@localhost\u001b[0m:\u001b[34;1m~\u001b[0m#\u001b[32;1m                                            |
 |                                                              |
 +--------------------------------------------------------------+\u001b[0m
-\u001b[36mNote\u001b[0m : \u001b[2;1mWorks under Append mode.\u001b[0m
 \u001b[36mIssue\u001b[0m:\u001b[2m https://github.com/RED-5-CRACKERS/Thirukka/issues\u001b[0m
 \u001b[36mPulls\u001b[0m:\u001b[2m https://github.com/RED-5-CRACKERS/Thirukka/pulls\u001b[0m
 \u001b[36mSite\u001b[0m:\u001b[2m https://red5cracker.wordpress.com\u001b[0m
@@ -140,7 +141,7 @@ def opt():
                     system("pwd")
                 elif option == "clear":
                     system("clear")
-                elif option == "?":
+                elif option in ("?","help","h"):
                     Help_banner()
                 elif option == "":
                     pass
@@ -541,6 +542,7 @@ def Online():
         GG = '\u001b[32;1m'
         SS = '\u001b[36;1m'
         Min = '-'*64
+        print(f"Usage:\n\t{GG}/{NN}<searchquery>\n\t{GG}:{NN}<s.no to download>\n")
         while True:
             _inp_ = input(f"{GG}{UU}Thirukka{NN}({RR}3/Online{NN})> ").strip()
             if _inp_ != (''): 
@@ -573,7 +575,7 @@ def Online():
                         exit()
                 elif _inp_ == "clear":
                     system("clear")
-                elif _inp_ == "?":
+                elif _inp_ == ("?","help","h"):
                     Help_banner()
                 else:
                     print(f"{GG}[{RR}!{GG}] Ooops! '{_inp_}' not found. try '?'")
