@@ -575,7 +575,7 @@ def Online():
                         exit()
                 elif _inp_ == "clear":
                     system("clear")
-                elif _inp_ == ("?","help","h"):
+                elif _inp_ in ("?","help","h"):
                     Help_banner()
                 else:
                     print(f"{GG}[{RR}!{GG}] Ooops! '{_inp_}' not found. try '?'")
