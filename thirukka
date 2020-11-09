@@ -26,6 +26,7 @@ RANLIST=[
         "'du' to see disk usage",
         "Search and download from online '3' /<searchquery>, :<s.no>",
         "'clear' to clear console",
+        "https://github.com/Madhava-mng/li5tgen Advanced wordlist gen",
         "'pwd' to print current working directory"
         ]
 def Help_banner():
