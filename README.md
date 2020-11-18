@@ -3,7 +3,7 @@
 
 ### _WORD-LIST-GENARATOR_
 
-Written in python3 script. It generates wordlist for password attacks, url broutforcing, hashcracking, domain discover, ...
+Written in python3 script. It generates wordlist for (password attacks, url broutforcing, hashcracking, domain discovery). It was Written, when I am beginer in Python. Please Refere <a href="https://github.com/Madhava-mng/li5tgen.git" style="color:tomato">@li5tgen(gh)</a></p> for More Info.
 ***
 ### _REQUIRED:_
 * PYTHON3
@@ -44,5 +44,4 @@ user@localhost:~/Thirukka$ ./thirukka
 ***
 
 <img src=".thirukka.jpg" />
-
 
